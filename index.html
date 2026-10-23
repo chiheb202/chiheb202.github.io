@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Chiheb Ben Jeddou – Élève ingénieur IA, DevOps &amp; Web</title>
+<meta name="description" content="Portfolio de Mohamed Chiheb Ben Jeddou, élève ingénieur en informatique (IA &amp; Data Science) : développement web, IA, DevOps.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>⚙️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#13212C; --muted:#56677A; --line:#D5DDE4;
+  --accent:#0A6C8B; --accent-ink:#FFFFFF; --ok:#1E8E5A; --run:#C98200;
+  --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --text:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --mono:"JetBrains Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0E1A23;--surface:#15252F;--ink:#E6EEF3;--muted:#98AAB8;--line:#27394630;--accent:#4CC3E6;--accent-ink:#06222C;--ok:#4FD08E;--run:#F0B33A;--line:#2A3C49}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--text)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:24px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
+.logo{font:800 1.1rem var(--display);text-decoration:none;color:var(--ink)}
+nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-weight:600}
+nav a:hover{color:var(--accent)}
+.hero{padding:72px 0 40px}
+h1{font:800 clamp(2.4rem,7vw,4.6rem)/1.02 var(--display);letter-spacing:-.03em;margin:0 0 20px}
+.role{font:500 clamp(1.1rem,2.6vw,1.4rem) var(--display);color:var(--accent);margin:0 0 20px}
+.lead{max-width:60ch;color:var(--muted);margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font:700 1.7rem var(--display);letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 28px;max-width:62ch}
+
+/* pipeline = projets */
+.pipe{display:flex;align-items:stretch;gap:0;list-style:none;margin:0 0 20px;padding:0}
+.pipe li{flex:1;position:relative;display:flex}
+.pipe li:not(:last-child)::after{content:"";position:absolute;right:-1px;top:50%;width:20px;height:2px;background:var(--line);transform:translateX(100%);z-index:1}
+.stage{flex:1;text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:10px;padding:14px 16px;margin-right:20px;cursor:pointer;font:inherit;color:inherit;display:flex;flex-direction:column;gap:4px}
+.pipe li:last-child .stage{margin-right:0}
+.stage[aria-selected="true"]{border-color:var(--accent)}
+.stage b{font:700 1rem var(--display)}
+.stage small{color:var(--muted)}
+.dot{display:inline-flex;align-items:center;gap:6px;font:500 .78rem var(--mono);color:var(--muted)}
+.dot::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--run)}
+.go .dot::before{background:var(--ok)}
+.pipe:not(.go) .dot::before{animation:none}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px 28px}
+.panel[hidden]{display:none}
+.panel h3{font:700 1.3rem var(--display);margin:0 0 4px}
+.panel .meta{color:var(--muted);margin:0 0 14px;font-size:.95rem}
+.panel ul{padding-left:20px;margin:12px 0}
+.panel li{margin:5px 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font:500 .78rem var(--mono);border:1px solid var(--line);border-radius:6px;padding:3px 9px;color:var(--muted)}
+pre.flow{font:500 .85rem/1.5 var(--mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 14px;overflow-x:auto;margin:14px 0}
+
+/* parcours */
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 26px 26px}
+.tl li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl .when{font:500 .8rem var(--mono);color:var(--muted)}
+.tl h3{font:700 1.1rem var(--display);margin:2px 0}
+.tl p{margin:0;color:var(--muted)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.skills h3{font:700 1rem var(--display);margin:0 0 10px}
+.skills ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.skills li{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:4px 11px;font-size:.95rem}
+
+.contact dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 22px;margin:0}
+.contact dt{color:var(--muted)}
+.contact dd{margin:0;font-weight:600}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.9rem}
+
+@media (max-width:720px){
+  .pipe{flex-direction:column;gap:12px}
+  .pipe li:not(:last-child)::after{display:none}
+  .stage{margin-right:0}
+  nav a{margin:0 16px 0 0}
+}
+@media (prefers-reduced-motion:no-preference){
+  .pipe.boot .stage{opacity:0;transform:translateY(8px);animation:in .5s forwards}
+  .pipe.boot li:nth-child(2) .stage{animation-delay:.25s}
+  .pipe.boot li:nth-child(3) .stage{animation-delay:.5s}
+  @keyframes in{to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">Chiheb Ben Jeddou</a>
+    <nav aria-label="Navigation principale">
+      <a href="#projets">Projets</a><a href="#parcours">Parcours</a><a href="#competences">Compétences</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Mohamed Chiheb<br>Ben Jeddou</h1>
+    <p class="role">Élève ingénieur en informatique · IA &amp; Data Science</p>
+    <p class="lead">Je développe des applications web, j'y intègre de l'IA, et je les livre automatiquement : de Spring Boot et Angular jusqu'aux pipelines GitLab CI/CD, Docker et Kubernetes.</p>
+    <div class="btns">
+      <a class="btn primary" href="CV.pdf">Télécharger mon CV</a>
+      <a class="btn ghost" href="#contact">Me contacter</a>
+    </div>
+  </div>
+
+  <section id="projets">
+    <h2>Projets</h2>
+    <p class="sub">Mes trois stages se lisent comme un pipeline : du développement à l'automatisation. Sélectionnez une étape pour voir le détail.</p>
+
+    <ol class="pipe boot" id="pipe" role="tablist" aria-label="Projets">
+      <li><button class="stage" role="tab" id="t1" aria-controls="p1" aria-selected="false"><b>LawyerSoft</b><small>Stage PFE · Teamsyst</small><span class="dot">web</span></button></li>
+      <li><button class="stage" role="tab" id="t2" aria-controls="p2" aria-selected="false"><b>Reconnaissance faciale</b><small>Stage d'été · ELFOULADH</small><span class="dot">ia</span></button></li>
+      <li><button class="stage" role="tab" id="t3" aria-controls="p3" aria-selected="true"><b>Chaîne CI/CD</b><small>Stage DevOps</small><span class="dot">devops</span></button></li>
+    </ol>
+
+    <div class="panel" id="p1" role="tabpanel" aria-labelledby="t1" hidden>
+      <h3>LawyerSoft – gestion de cabinets d'avocats</h3>
+      <p class="meta">Teamsyst, Tunis · Stage PFE de 5 mois · Développement web</p>
+      <p>Application web complète destinée à la gestion des cabinets d'avocats, réalisée avec un backend Spring Boot et une interface Angular.</p>
+      <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Angular</span></div>
+    </div>
+
+    <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+      <h3>Système de reconnaissance faciale automatique</h3>
+      <p class="meta">ELFOULADH, Tunis · Stage d'été</p>
+      <p>Application intégrant l'intelligence artificielle pour capturer un visage, l'identifier et enregistrer le résultat dans une base de données PostgreSQL.</p>
+      <div class="tags"><span class="tag">IA</span><span class="tag">Reconnaissance faciale</span><span class="tag">PostgreSQL</span></div>
+    </div>
+
+    <div class="panel" id="p3" role="tabpanel" aria-labelledby="t3">
+      <h3>Industrialisation d'une application 3-tiers avec GitLab, Docker et Kubernetes</h3>
+      <p class="meta">Stage DevOps / CI-CD · Application de gestion de smartphones (Angular, ASP.NET Core 8, PostgreSQL)</p>
+      <pre class="flow" aria-label="Stages du pipeline">build → test → docker → deploy → deploy-k8s</pre>
+      <ul>
+        <li>Dockerfiles multi-stage (utilisateur non-root, images allégées) et orchestration locale avec Docker Compose.</li>
+        <li>Pipeline GitLab CI/CD à 5 stages : images publiées dans le Container Registry, taguées par SHA de commit pour tracer et revenir en arrière.</li>
+        <li>Manifestes Kubernetes pour k3s : StatefulSet PostgreSQL, Secrets, PVC, Ingress, sondes readiness / liveness.</li>
+        <li>Résolution d'incidents réels : timeouts réseau en CI, tests Angular headless, CORS / HTTPS.</li>
+        <li>Méthode agile : sprints, tableau Kanban GitLab, merge requests et définition du « terminé ».</li>
+      </ul>
+      <div class="tags"><span class="tag">Docker</span><span class="tag">GitLab CI/CD</span><span class="tag">Kubernetes</span><span class="tag">k3s</span><span class="tag">Nginx</span><span class="tag">ASP.NET Core</span><span class="tag">Angular</span><span class="tag">PostgreSQL</span></div>
+      <!-- Ajoutez ici le lien de votre dépôt : <p><a href="https://github.com/VOTRE-PSEUDO/VOTRE-DEPOT">Voir le code sur GitHub</a></p> -->
+    </div>
+  </section>
+
+  <section id="parcours">
+    <h2>Parcours</h2>
+    <p class="sub">Formation et expériences.</p>
+    <ol class="tl">
+      <li><span class="when">2024 – présent</span><h3>Diplôme National d'Ingénieur en informatique – IA &amp; Data Science</h3><p>iTeam University, Tunis</p></li>
+      <li><span class="when">2021 – 2023</span><h3>Licence nationale en informatique appliquée à la gestion</h3><p>ISG Gabès</p></li>
+    </ol>
+  </section>
+
+  <section id="competences">
+    <h2>Compétences</h2>
+    <p class="sub">Les outils que j'utilise sur mes projets.</p>
+    <div class="skills">
+      <div><h3>Développement</h3><ul><li>Java</li><li>Spring Boot</li><li>Angular</li><li>TypeScript</li><li>HTML / CSS</li><li>JavaScript</li><li>PHP</li><li>ASP.NET Core</li><li>PostgreSQL</li></ul></div>
+      <div><h3>DevOps &amp; Cloud</h3><ul><li>Docker</li><li>Docker Compose</li><li>GitLab CI/CD</li><li>Kubernetes (k3s)</li><li>kubectl</li><li>Nginx</li><li>Git</li></ul></div>
+      <div><h3>Autres</h3><ul><li>Réseaux informatiques</li><li>Scrum, Kanban</li><li>Français</li><li>Anglais</li></ul></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p class="sub">Disponible pour échanger sur un stage, un projet ou une opportunité.</p>
+    <dl>
+      <dt>E-mail</dt><dd><a href="mailto:Chihebbenjeddou1@gmail.com">Chihebbenjeddou1@gmail.com</a></dd>
+      <dt>Mobile</dt><dd><a href="tel:+21699191693">99 191 693</a></dd>
+      <dt>Ville</dt><dd>Menzel Bourguiba, Bizerte</dd>
+    </dl>
+  </section>
+
+</div>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> Mohamed Chiheb Ben Jeddou</div></footer>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  function show(t){
+    tabs.forEach(function(x){
+      var on=x===t; x.setAttribute('aria-selected',on);
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(t)});
+    t.addEventListener('keydown',function(e){
+      var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;
+      if(n!==null){var x=tabs[(n+tabs.length)%tabs.length];x.focus();show(x);}
+    });
+  });
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
