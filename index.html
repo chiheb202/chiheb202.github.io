@@ -1,349 +1,569 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0c1422">
-  <title>Chiheb Ben Jeddou — Portfolio</title>
-  <meta name="description" content="Portfolio de Mohamed Chiheb Ben Jeddou : développement web, intelligence artificielle et DevOps.">
+  <meta name="theme-color" content="#0b1424">
+  <title>Mohamed Chiheb Ben Jeddou — Portfolio</title>
+  <meta name="description" content="Portfolio de Mohamed Chiheb Ben Jeddou, élève ingénieur en informatique : IA &amp; Data Science, développement web et DevOps.">
+  <meta name="keywords" content="Mohamed Chiheb Ben Jeddou, informatique, IA, Data Science, développement web, DevOps, portfolio">
+  <meta name="author" content="Mohamed Chiheb Ben Jeddou">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohamed Chiheb Ben Jeddou — Portfolio">
+  <meta property="og:description" content="Élève ingénieur en informatique — IA &amp; Data Science, développement web et DevOps.">
+  <meta property="og:locale" content="fr_TN">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mohamed Chiheb Ben Jeddou — Portfolio">
+  <meta name="twitter:description" content="Élève ingénieur en informatique — IA &amp; Data Science, développement web et DevOps.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1424'/%3E%3Cpath d='M13 46V18h7l12 15 12-15h7v28h-8V30L32 42 21 30v16z' fill='%2378b8e8'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #0c1422;
-      --panel: #121d2d;
-      --panel-2: #1b2a3d;
-      --ink: #edf2f8;
-      --muted: #a3afbf;
-      --line: #2d3c50;
+      --bg: #0b1424;
+      --bg-raised: #101c30;
+      --surface: #111e32;
+      --surface-strong: #16253b;
+      --surface-soft: #0e192b;
+      --ink: #f1f5fb;
+      --muted: #aab7c9;
+      --muted-2: #7e8ea4;
+      --line: #2a3a50;
       --accent: #78b8e8;
-      --accent-dark: #4b8dbf;
-      --blue: #9fc9e8;
+      --accent-strong: #91c9f1;
+      --accent-rgb: 120 184 232;
+      --green: #83c7ae;
+      --gold: #d8bd85;
       --display: "Manrope", "Segoe UI", sans-serif;
       --body: "Inter", "Segoe UI", sans-serif;
       --mono: "DM Mono", Consolas, monospace;
-      --max: 1200px;
+      --max: 1160px;
+      --header-height: 76px;
+    }
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f3f6fa;
+      --bg-raised: #eaf0f6;
+      --surface: #ffffff;
+      --surface-strong: #f7fafe;
+      --surface-soft: #eaf1f8;
+      --ink: #15243a;
+      --muted: #52647a;
+      --muted-2: #6b7d92;
+      --line: #d5e0eb;
+      --accent: #276fa5;
+      --accent-strong: #1e608f;
+      --accent-rgb: 39 111 165;
+      --green: #357864;
+      --gold: #846536;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body { margin: 0; color: var(--ink); background: radial-gradient(ellipse 66% 44% at 8% 0%, rgb(120 184 232 / 11%), transparent 72%), radial-gradient(ellipse 42% 36% at 96% 37%, rgb(159 201 232 / 6%), transparent 72%), linear-gradient(180deg, #0c1422 0%, #101a2a 52%, #0c1422 100%); font: 400 16px/1.7 var(--body); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-    body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .22; background-image: linear-gradient(rgb(159 201 232 / 4%) 1px, transparent 1px), linear-gradient(90deg, rgb(159 201 232 / 4%) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, black, transparent 72%); }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 20px); }
+    body {
+      min-width: 320px; margin: 0; color: var(--ink);
+      background: radial-gradient(ellipse 68% 50% at 8% -8%, rgb(var(--accent-rgb) / 9%), transparent 72%),
+                  radial-gradient(ellipse 46% 40% at 100% 36%, rgb(var(--accent-rgb) / 5%), transparent 72%), var(--bg);
+      font: 400 16px/1.7 var(--body); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .18; background-image: linear-gradient(rgb(var(--accent-rgb) / 3.5%) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--accent-rgb) / 3.5%) 1px, transparent 1px); background-size: 84px 84px; mask-image: linear-gradient(to bottom, #000, transparent 78%); }
     a { color: inherit; }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+    button { color: inherit; font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+    [hidden] { display: none !important; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .wrap { width: min(var(--max), calc(100% - 56px)); margin-inline: auto; }
     .mono { font-family: var(--mono); }
-    .lime { color: var(--accent); }
+    .accent { color: var(--accent); }
+    .skip-link { position: fixed; top: 10px; left: 10px; z-index: 120; padding: 10px 14px; color: var(--bg); background: var(--accent); transform: translateY(-160%); }
+    .skip-link:focus { transform: none; }
 
-    /* top navigation */
-    .header { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid rgb(120 184 232 / 14%); background: rgb(12 20 34 / 88%); backdrop-filter: blur(14px); }
-    .header-inner { min-height: 72px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: .88rem; letter-spacing: -.03em; }
-    .brand-symbol { display: grid; place-items: center; width: 31px; height: 31px; color: var(--bg); background: var(--accent); clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%); font: 500 .68rem var(--mono); }
-    .nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 34px); }
-    .nav a { color: var(--muted); font-size: .81rem; text-decoration: none; transition: color .18s ease; }
-    .nav a:hover { color: var(--accent); }
-    .nav .nav-cta { padding: 8px 13px; border: 1px solid var(--accent); color: var(--accent); }
-    .nav .nav-cta:hover { color: var(--bg); background: var(--accent); }
+    /* Loader d’introduction, court et désactivé si l’utilisateur réduit les animations. */
+    .preloader { display: none; }
+    .js .preloader { position: fixed; inset: 0; z-index: 110; display: grid; place-items: center; background: var(--bg); opacity: 1; visibility: visible; transition: opacity .18s ease, visibility .18s ease; }
+    .js .preloader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+    .preloader-mark { display: grid; place-items: center; width: 68px; height: 68px; border: 1px solid rgb(var(--accent-rgb) / 50%); color: var(--accent); font: 600 1rem var(--mono); letter-spacing: -.08em; animation: loader-mark .55s cubic-bezier(.2,.8,.2,1) both; }
+    .preloader-mark::after { content: ""; position: absolute; width: 84px; height: 84px; border: 1px solid rgb(var(--accent-rgb) / 12%); border-radius: 50%; animation: loader-ring .85s ease-out both; }
+    @keyframes loader-mark { from { opacity: 0; transform: translateY(8px) scale(.92); } to { opacity: 1; transform: none; } }
+    @keyframes loader-ring { from { opacity: 0; transform: scale(.8); } to { opacity: 1; transform: scale(1); } }
 
-    /* hero */
-    .hero { position: relative; overflow: hidden; min-height: min(780px, calc(100svh - 72px)); display: flex; align-items: center; padding: 92px 0 86px; }
-    .hero::before { content: ""; position: absolute; width: 520px; height: 520px; top: 12%; right: -205px; border: 1px solid rgb(120 184 232 / 9%); border-radius: 50%; box-shadow: 0 0 0 42px rgb(120 184 232 / 1.3%), 0 0 0 84px rgb(120 184 232 / 1%), 0 0 0 126px rgb(120 184 232 / .7%); animation: orbit 38s linear infinite; pointer-events: none; }
-    .hero::after { content: ""; position: absolute; width: 8px; height: 8px; top: 20%; right: 18%; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px rgb(120 184 232 / 55%); animation: blink 3.6s ease-in-out infinite; }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, .75fr); align-items: center; gap: clamp(28px, 3vw, 48px); }
-    .hero-copy-wrap { position: relative; z-index: 2; min-width: 0; }
-    .availability { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 28px; padding: 7px 11px; color: #d8e3ef; border: 1px solid var(--line); border-radius: 999px; background: rgb(18 29 45 / 82%); font: 400 .7rem var(--mono); }
-    .availability::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
-    .hero-kicker { margin: 0 0 12px; color: var(--accent); font: 500 .75rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
-    h1 { max-width: 740px; margin: 0; font: 700 clamp(3.25rem, 4.6vw, 4.8rem)/1.02 var(--display); letter-spacing: -.055em; }
-    h1 .line { display: block; white-space: nowrap; }
-    h1 .line:last-child { color: var(--accent); -webkit-text-stroke: 0; }
-    .hero-role { margin: 25px 0 0; color: var(--blue); font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 600; letter-spacing: -.025em; }
-    .hero-copy { max-width: 580px; margin: 13px 0 0; color: var(--muted); font-size: 1rem; line-height: 1.75; }
-    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 0 16px; border: 1px solid transparent; text-decoration: none; font-size: .81rem; font-weight: 700; transition: .2s ease; }
-    .button:hover { transform: translateY(-3px); }
-    .button-primary { background: var(--accent); color: var(--bg); }
-    .button-primary:hover { background: #a8d5f7; box-shadow: 0 8px 32px rgb(120 184 232 / 18%); }
+    /* Barre de progression et navigation */
+    .scroll-progress { position: fixed; inset: 0 0 auto; z-index: 105; height: 2px; pointer-events: none; background: transparent; }
+    .scroll-progress span { display: block; width: 100%; height: 100%; background: var(--accent); transform: scaleX(var(--scroll-progress, 0)); transform-origin: left center; box-shadow: 0 0 12px rgb(var(--accent-rgb) / 50%); }
+    .header { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgb(var(--accent-rgb) / 13%); background: rgb(11 20 36 / 90%); backdrop-filter: blur(16px); transition: opacity .22s ease; }
+    html[data-theme="light"] .header { background: rgb(243 246 250 / 90%); }
+    .header.is-scrolled { background: rgb(11 20 36 / 96%); opacity: .97; }
+    html[data-theme="light"] .header.is-scrolled { background: rgb(243 246 250 / 97%); opacity: .97; }
+    .header-inner { min-height: var(--header-height); display: flex; align-items: center; justify-content: space-between; gap: 24px; transform-origin: center top; transition: transform .25s ease; }
+    .header.is-scrolled .header-inner { min-height: var(--header-height); transform: scaleY(.94); }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font: 700 .82rem var(--display); letter-spacing: .015em; white-space: nowrap; }
+    .brand-symbol { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid rgb(var(--accent-rgb) / 45%); background: rgb(var(--accent-rgb) / 13%); color: var(--accent); font: 500 .68rem var(--mono); }
+    .nav-tools { display: flex; align-items: center; gap: clamp(12px, 2vw, 26px); }
+    .nav { display: flex; align-items: center; gap: clamp(16px, 2.5vw, 31px); }
+    .nav a { position: relative; padding: 8px 0; color: var(--muted); font-size: .78rem; text-decoration: none; }
+    .nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .22s ease; }
+    .nav a:hover, .nav a[aria-current="location"] { color: var(--ink); }
+    .nav a:hover::after, .nav a[aria-current="location"]::after { transform: scaleX(1); }
+    .nav .nav-contact { color: var(--accent); }
+    .nav .nav-contact::after { display: none; }
+    .nav-tools button { min-width: 36px; height: 34px; padding: 0 9px; border: 1px solid var(--line); background: transparent; color: var(--muted); font: 500 .68rem var(--mono); cursor: pointer; }
+    .nav-tools button:hover { color: var(--accent); border-color: var(--accent); }
+    .nav-tools .theme-toggle { display: grid; place-items: center; padding: 0; }
+    .theme-toggle svg { width: 16px; height: 16px; }
+
+    /* Accueil */
+    .hero { position: relative; overflow: clip; min-height: min(760px, calc(100svh - var(--header-height))); display: flex; align-items: center; padding: clamp(72px, 9vw, 112px) 0 88px; }
+    .hero::before { content: ""; position: absolute; width: 530px; height: 530px; top: 12%; right: -275px; border: 1px solid rgb(var(--accent-rgb) / 9%); border-radius: 50%; box-shadow: 0 0 0 54px rgb(var(--accent-rgb) / 1.5%), 0 0 0 108px rgb(var(--accent-rgb) / 1%); pointer-events: none; animation: orbit 44s linear infinite; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); align-items: center; gap: clamp(34px, 6vw, 78px); }
+    .hero-copy { min-width: 0; }
+    .availability { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 23px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 2px; background: var(--surface); color: var(--muted); font: 400 .66rem var(--mono); }
+    .availability::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgb(131 199 174 / 12%); }
+    .eyebrow { margin: 0 0 13px; color: var(--accent); font: 500 .68rem var(--mono); letter-spacing: .11em; text-transform: uppercase; }
+    h1 { max-width: 690px; margin: 0; font: 700 clamp(3.25rem, 6.1vw, 5.4rem)/.99 var(--display); letter-spacing: -.065em; }
+    .line-mask { display: block; overflow: hidden; padding: 0 0 .06em; }
+    .line-inner { display: block; }
+    .line-mask:last-child .line-inner { color: var(--accent); }
+    .js body:not(.intro-ready) .line-inner { transform: translateY(115%); }
+    .js body.intro-ready .line-mask:first-child .line-inner { animation: line-reveal .68s cubic-bezier(.2,.75,.2,1) both; }
+    .js body.intro-ready .line-mask:last-child .line-inner { animation: line-reveal .68s .11s cubic-bezier(.2,.75,.2,1) both; }
+    @keyframes line-reveal { to { transform: translateY(0); } }
+    .hero-role-label { margin: 22px 0 4px; color: var(--muted); font-size: .78rem; }
+    .role-rotator { min-height: 1.8em; margin: 0; color: var(--ink); font: 600 clamp(1.02rem, 2vw, 1.2rem)/1.45 var(--display); letter-spacing: -.02em; }
+    .role-rotator span { display: inline-block; animation: role-enter .42s cubic-bezier(.2,.75,.2,1) both; }
+    @keyframes role-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-summary { max-width: 550px; margin: 15px 0 0; color: var(--muted); font-size: .95rem; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 27px; }
+    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 15px; border: 1px solid transparent; text-decoration: none; font-size: .78rem; font-weight: 600; cursor: pointer; transition: translate .2s ease; translate: var(--mag-x, 0px) var(--mag-y, 0px); }
+    .button:hover { translate: var(--mag-x, 0px) calc(var(--mag-y, 0px) - 2px); }
+    .button-primary { color: #071323; background: var(--accent); }
+    .button-primary:hover { color: #071323; background: var(--accent-strong); box-shadow: 0 8px 24px rgb(var(--accent-rgb) / 17%); }
     .button-outline { color: var(--ink); border-color: var(--line); background: transparent; }
-    .button-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .button-outline:hover { color: var(--accent); border-color: var(--accent); }
     .button-arrow { font-size: 1rem; }
 
-    .visual-wrap { position: relative; z-index: 1; min-width: 0; min-height: 440px; display: grid; place-items: center; perspective: 1100px; }
-    .orbit { position: absolute; width: min(100%, 425px); aspect-ratio: 1; border: 1px solid rgb(159 201 232 / 20%); border-radius: 50%; animation: orbit 36s linear infinite reverse; }
-    .orbit::before, .orbit::after { content: ""; position: absolute; border: 1px solid rgb(120 184 232 / 13%); border-radius: 50%; inset: 36px; }
-    .orbit::after { inset: 78px; border-color: rgb(159 201 232 / 13%); }
-    .orbit-node { position: absolute; top: 12%; left: 20%; width: 10px; height: 10px; background: var(--blue); border-radius: 50%; box-shadow: 0 0 18px var(--blue); }
-    .tech-card { position: relative; z-index: 2; width: min(330px, 86%); padding: 21px; border: 1px solid #36475c; background: linear-gradient(145deg, #1b2a3d, #121d2d); box-shadow: 0 30px 90px rgb(0 0 0 / 38%); transform: rotateY(-7deg) rotateX(3deg) rotateZ(-2deg); transform-style: preserve-3d; animation: float 5s ease-in-out infinite; }
-    .cube-scene { position: absolute; top: 1%; right: 0; z-index: 0; display: grid; width: 172px; height: 172px; place-items: center; perspective: 700px; opacity: .48; pointer-events: none; }
-    .cube-3d { --cube-half: 39px; position: relative; width: calc(var(--cube-half) * 2); height: calc(var(--cube-half) * 2); transform-style: preserve-3d; filter: drop-shadow(0 14px 20px rgb(0 0 0 / 24%)); animation: cube-spin 38s linear infinite; }
-    .cube-face { position: absolute; inset: 0; display: grid; place-items: center; border: 1px solid rgb(159 201 232 / 45%); background: linear-gradient(145deg, rgb(159 201 232 / 17%), rgb(120 184 232 / 3%)); box-shadow: inset 0 0 24px rgb(120 184 232 / 8%); color: #c0def2; font: 500 .62rem var(--mono); backdrop-filter: blur(3px); }
-    .cube-front { transform: translateZ(var(--cube-half)); }
-    .cube-back { transform: rotateY(180deg) translateZ(var(--cube-half)); }
-    .cube-right { transform: rotateY(90deg) translateZ(var(--cube-half)); }
-    .cube-left { transform: rotateY(-90deg) translateZ(var(--cube-half)); }
-    .cube-top { transform: rotateX(90deg) translateZ(var(--cube-half)); }
-    .cube-bottom { transform: rotateX(-90deg) translateZ(var(--cube-half)); }
-    .tech-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
-    .window-dots { display: flex; gap: 5px; }
-    .window-dots i { width: 6px; height: 6px; border-radius: 50%; background: #77889b; }
-    .window-dots i:first-child { background: var(--accent); }
-    .tech-head span:last-child { color: var(--muted); font: 400 .62rem var(--mono); }
-    .code-lines { display: grid; gap: 11px; padding: 20px 0 15px; font: 400 .72rem/1.3 var(--mono); }
-    .code-lines p { margin: 0; white-space: nowrap; }
-    .code-lines .indent { padding-left: 20px; }
-    .code-muted { color: #74849a; }.code-green { color: var(--accent); }.code-blue { color: var(--blue); }.code-warm { color: #d6b982; }
-    .status-row { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font: 400 .63rem var(--mono); }
-    .status-row strong { color: var(--accent); font-weight: 400; }
-    .floating-label { position: absolute; z-index: 3; padding: 7px 9px; color: var(--accent); border: 1px solid rgb(120 184 232 / 17%); background: rgb(23 34 53 / 88%); font: 400 .63rem var(--mono); letter-spacing: .04em; box-shadow: 0 6px 18px rgb(0 0 0 / 18%); }
-    .label-one { top: 17%; right: 3%; animation: float 4s ease-in-out infinite reverse; }
-    .label-two { bottom: 16%; left: 2%; color: var(--blue); border-color: rgb(159 201 232 / 25%); animation: float 4.7s ease-in-out infinite; }
-    .scroll-hint { position: absolute; z-index: 1; bottom: 22px; left: 50%; display: flex; align-items: center; gap: 10px; transform: translateX(-50%); color: #8795a8; font: 400 .63rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
-    .scroll-hint::before { content: ""; width: 32px; height: 1px; background: var(--accent); }
+    /* Carte terminal interactive à parallaxe très légère */
+    .terminal-scene { position: relative; min-width: 0; padding: 24px 0; perspective: 1300px; }
+    .terminal-scene::before, .terminal-scene::after { content: ""; position: absolute; z-index: -1; border: 1px solid rgb(var(--accent-rgb) / 15%); border-radius: 50%; pointer-events: none; }
+    .terminal-scene::before { width: 330px; height: 330px; top: -32px; right: -25px; }
+    .terminal-scene::after { width: 260px; height: 260px; top: 4px; right: 10px; border-color: rgb(var(--accent-rgb) / 9%); }
+    .terminal-card { position: relative; z-index: 1; width: min(100%, 480px); margin-left: auto; padding: clamp(18px, 2.6vw, 26px); border: 1px solid var(--line); background: linear-gradient(145deg, var(--surface-strong), var(--surface)); box-shadow: 0 28px 75px rgb(0 0 0 / 22%); transform: perspective(1100px) rotateX(var(--terminal-rx, 0deg)) rotateY(var(--terminal-ry, 0deg)) translate3d(var(--terminal-tx, 0px), var(--terminal-ty, 0px), 0); transition: transform .32s ease; transform-style: preserve-3d; }
+    .terminal-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-bottom: 15px; border-bottom: 1px solid var(--line); }
+    .terminal-dots { display: flex; gap: 5px; }
+    .terminal-dots i { width: 6px; height: 6px; border: 1px solid var(--muted-2); border-radius: 50%; }
+    .terminal-dots i:first-child { border-color: var(--accent); background: var(--accent); }
+    .terminal-label { color: var(--muted-2); font: 400 .61rem var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .terminal-kicker { margin: 19px 0 4px; color: var(--accent); font: 400 .62rem var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .terminal-title { margin: 0; font: 600 1.03rem/1.4 var(--display); letter-spacing: -.02em; }
+    .terminal-code { margin: 17px 0 18px; padding: 13px 14px; border-left: 1px solid rgb(var(--accent-rgb) / 40%); background: var(--surface-soft); color: var(--muted); font: 400 .66rem/1.8 var(--mono); overflow-x: auto; }
+    .code-blue { color: var(--accent); }.code-soft { color: var(--green); }.code-comment { color: var(--muted-2); }
+    .pipeline-tabs { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 5px; margin-top: 16px; }
+    .pipeline-tab { min-height: 38px; padding: 5px 3px; border: 1px solid var(--line); background: transparent; color: var(--muted); font: 400 .59rem var(--mono); cursor: pointer; }
+    .pipeline-tab[aria-selected="true"] { border-color: rgb(var(--accent-rgb) / 54%); background: rgb(var(--accent-rgb) / 10%); color: var(--accent-strong); }
+    .pipeline-tab:hover { border-color: var(--accent); color: var(--ink); }
+    .pipeline-copy { min-height: 2.8em; margin: 13px 0 0; color: var(--muted); font-size: .74rem; line-height: 1.6; }
+    .pipeline-status { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 17px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted-2); font: 400 .59rem var(--mono); text-transform: uppercase; letter-spacing: .05em; }
+    .pipeline-status strong { color: var(--green); font-weight: 400; }
+    .scroll-cue { position: absolute; bottom: 22px; left: 50%; display: flex; align-items: center; gap: 10px; color: var(--muted-2); transform: translateX(-50%); font: 400 .59rem var(--mono); letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+    .scroll-cue::before { content: ""; width: 25px; height: 1px; background: var(--accent); }
 
-    /* moving keyword strip */
-    .ticker { overflow: hidden; border-block: 1px solid var(--line); background: #111a28; }
-    .ticker-track { display: flex; width: max-content; align-items: center; gap: 28px; padding: 14px 0; animation: ticker 28s linear infinite; }
-    .ticker-item { display: inline-flex; align-items: center; gap: 28px; color: #cbd5e2; font: 500 .69rem var(--mono); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
-    .ticker-item::after { content: "✳"; color: var(--accent); font-size: .8rem; }
-
-    /* section styles */
-    section.content-section { padding: 94px 0; border-bottom: 1px solid var(--line); }
-    #projets { background: linear-gradient(180deg, rgb(18 29 45 / 42%), rgb(12 20 34 / 12%) 76%, transparent); }
-    #parcours { background: linear-gradient(110deg, transparent 12%, rgb(18 29 45 / 24%) 52%, transparent 90%); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 32px; }
-    .section-label { margin: 0 0 10px; color: var(--accent); font: 400 .69rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
-    h2 { margin: 0; font: 700 clamp(2rem, 4vw, 3.8rem)/1.08 var(--display); letter-spacing: -.055em; }
-    .section-intro { max-width: 440px; margin: 0; color: var(--muted); font-size: .88rem; }
-
-    /* interactive project filter */
-    .filter-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 0 0 17px; }
-    .filter-label { margin-right: 5px; color: var(--muted); font: 400 .65rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-    .filter-button { padding: 7px 12px; border: 1px solid var(--line); border-radius: 2px; background: transparent; color: #b1bfd1; font: 400 .68rem var(--mono); cursor: pointer; transition: color .2s ease, border-color .2s ease, background .2s ease; }
-    .filter-button:hover, .filter-button[aria-pressed="true"] { color: var(--bg); border-color: var(--accent); background: var(--accent); }
-    .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .project { position: relative; min-height: 300px; display: flex; flex-direction: column; padding: 24px; border: 1px solid var(--line); background: linear-gradient(145deg, rgb(29 43 62 / 94%), rgb(18 29 45 / 96%)); transition: transform .25s ease, border-color .25s ease, background .25s ease; overflow: hidden; }
-    .project:hover { transform: perspective(1000px) rotateX(1.5deg) rotateY(-1deg) translateY(-5px); border-color: rgb(120 184 232 / 55%); background: linear-gradient(145deg, #202f44, #172235); }
-    .project::after { content: attr(data-number); position: absolute; top: 12px; right: 16px; color: rgb(237 242 248 / 5%); font: 700 5rem/.9 var(--display); letter-spacing: -.1em; pointer-events: none; }
-    .project.project-wide { grid-column: 1 / -1; min-height: 325px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 30px; }
-    .project-top { position: relative; z-index: 1; display: flex; align-items: center; gap: 9px; color: var(--accent); font: 400 .65rem var(--mono); letter-spacing: .07em; text-transform: uppercase; }
-    .project-top::before { content: ""; width: 7px; height: 7px; border: 1px solid currentColor; transform: rotate(45deg); }
-    .project h3 { position: relative; z-index: 1; margin: 18px 0 8px; font: 700 clamp(1.3rem, 2.5vw, 1.85rem)/1.14 var(--display); letter-spacing: -.05em; }
-    .project-meta { position: relative; z-index: 1; margin: 0 0 13px; color: #95a3b7; font: 400 .68rem var(--mono); }
-    .project-copy { position: relative; z-index: 1; max-width: 650px; margin: 0; color: #b4c0d0; font-size: .88rem; line-height: 1.7; }
-    .project-detail-label { position: relative; z-index: 1; margin: 17px 0 6px; color: var(--accent); font: 500 .65rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
-    .project-list { position: relative; z-index: 1; margin: 6px 0 0; padding-left: 17px; color: #d4deea; font-size: .82rem; line-height: 1.65; }
-    .project-list li { padding-left: 3px; margin: 5px 0; }
-    .project-list li::marker { color: var(--accent); }
-    .project-tags { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; padding-top: 0; }
-    .project-tags span { padding: 5px 8px; border: 1px solid #36475c; color: #bdcadb; font: 400 .62rem var(--mono); }
-    .project-visual { position: relative; z-index: 1; align-self: center; padding: 18px; border: 1px solid #394b64; background: rgb(12 20 34 / 58%); }
-    .visual-caption { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 13px; color: #95a3b7; font: 400 .61rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-    .visual-caption b { color: var(--accent); font-weight: 400; }
-    .pipeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
-    .pipeline span { position: relative; padding: 9px 3px; text-align: center; border: 1px solid #36475c; color: #d5dfeb; background: #1c2a3e; font: 400 .57rem var(--mono); }
-    .pipeline span:not(:last-child)::after { content: "›"; position: absolute; top: 50%; right: -8px; z-index: 2; transform: translateY(-50%); color: var(--accent); }
-    .pipeline span:last-child { border-color: rgb(120 184 232 / 45%); color: var(--accent); }
-    .visual-note { display: flex; align-items: center; gap: 8px; margin-top: 13px; color: #a0aec0; font: 400 .61rem var(--mono); }
-    .visual-note i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
-    .project[hidden] { display: none !important; }
-
-    /* path and skills */
-    .path-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 60px; }
-    .path-lead { max-width: 300px; color: var(--muted); font-size: .9rem; }
-    .timeline { border-top: 1px solid var(--line); }
-    .timeline-item { display: grid; grid-template-columns: 125px 1fr; gap: 22px; padding: 23px 0; border-bottom: 1px solid var(--line); }
-    .timeline-item time { color: var(--accent); font: 400 .7rem var(--mono); padding-top: 4px; }
-    .timeline-item h3 { margin: 0; font-size: 1rem; line-height: 1.45; letter-spacing: -.025em; }
-    .timeline-item p { margin: 6px 0 0; color: var(--muted); font-size: .83rem; }
-    .skills-section { background: #111a28; }
-    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-    .skill-card { position: relative; min-height: 210px; padding: 22px; border: 1px solid var(--line); background: #172235; overflow: hidden; transition: border-color .2s ease, transform .2s ease; }
-    .skill-card:hover { border-color: rgb(120 184 232 / 50%); transform: translateY(-3px); }
-    .skill-number { color: var(--accent); font: 400 .64rem var(--mono); }
-    .skill-card h3 { margin: 13px 0 16px; font-size: 1.04rem; letter-spacing: -.03em; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .skill-tags span { padding: 5px 8px; border: 1px solid #36475c; color: #bac8da; font: 400 .65rem var(--mono); }
-
-    /* contact */
-    .contact-panel { position: relative; display: flex; align-items: end; justify-content: space-between; gap: 34px; padding: clamp(27px, 5vw, 52px); border: 1px solid rgb(120 184 232 / 35%); background: radial-gradient(ellipse at 86% 100%, rgb(120 184 232 / 10%), transparent 39%), #172235; overflow: hidden; }
-    .contact-panel::after { content: "LET'S BUILD"; position: absolute; right: 15px; top: 2px; color: rgb(237 242 248 / 3%); font: 700 clamp(3rem, 8vw, 7rem)/1 var(--display); letter-spacing: -.09em; pointer-events: none; white-space: nowrap; }
-    .contact-content { position: relative; z-index: 1; }
-    .contact-panel h2 { max-width: 670px; font-size: clamp(2.1rem, 5vw, 4rem); }
-    .contact-panel p { max-width: 540px; margin: 15px 0 0; color: var(--muted); font-size: .88rem; }
-    .contact-links { display: flex; flex-wrap: wrap; gap: 12px 23px; margin-top: 22px; color: #c7d2e1; font: 400 .72rem var(--mono); }
-    .contact-links a { text-decoration-color: #687a92; text-underline-offset: 4px; }
-    .contact-links a:hover { color: var(--accent); }
-    .contact-panel .button { position: relative; z-index: 1; flex: 0 0 auto; }
-    footer { padding: 24px 0 30px; color: #8291a6; font: 400 .67rem var(--mono); }
-    .footer-inner { display: flex; justify-content: space-between; gap: 16px; }
-    .footer-inner p { margin: 0; }
-    .footer-inner a { color: var(--accent); text-decoration: none; }
-
-    /* reveal and motion */
-    .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); }
-    .js .reveal.is-visible { opacity: 1; transform: none; }
-    @keyframes orbit { to { transform: rotate(360deg); } }
-    @keyframes float { 0%,100% { translate: 0 0; } 50% { translate: 0 -9px; } }
-    @keyframes blink { 0%,100% { opacity: .45; scale: .8; } 50% { opacity: 1; scale: 1.12; } }
+    /* Bandeau de domaines */
+    .ticker { overflow: hidden; border-block: 1px solid var(--line); background: rgb(16 28 48 / 64%); }
+    html[data-theme="light"] .ticker { background: rgb(234 241 248 / 80%); }
+    .ticker-track { display: flex; width: max-content; align-items: center; gap: 27px; padding: 13px 0; animation: ticker 35s linear infinite; }
+    .ticker-item { display: inline-flex; align-items: center; gap: 27px; color: var(--muted); font: 500 .63rem var(--mono); letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+    .ticker-item::after { content: "·"; color: var(--accent); font-size: 1.2rem; }
     @keyframes ticker { to { transform: translateX(-50%); } }
-    @keyframes cube-spin { from { transform: rotateX(-24deg) rotateY(0deg) rotateZ(45deg); } to { transform: rotateX(336deg) rotateY(360deg) rotateZ(405deg); } }
-    @media (min-width: 851px) and (max-width: 1100px) {
-      .hero-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 24px; }
-      h1 { font-size: clamp(3.2rem, 5.2vw, 4.2rem); }
-      .visual-wrap { min-height: 380px; }
+
+    /* Sections et révélations */
+    section.content-section { padding: clamp(72px, 9vw, 110px) 0; border-bottom: 1px solid var(--line); }
+    #projets { background: linear-gradient(180deg, rgb(var(--accent-rgb) / 4%), transparent 78%); }
+    #parcours { background: linear-gradient(110deg, transparent 8%, rgb(var(--accent-rgb) / 3%) 54%, transparent 92%); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 34px; margin-bottom: 34px; }
+    .section-label { margin: 0 0 12px; color: var(--accent); font: 500 .65rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    h2 { margin: 0; font: 700 clamp(2rem, 4.3vw, 3.45rem)/1.1 var(--display); letter-spacing: -.055em; }
+    .section-intro { max-width: 440px; margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.75; }
+    .section-title-line { display: block; overflow: hidden; padding-bottom: .05em; }
+    .section-title-line > span { display: inline-block; }
+    .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s cubic-bezier(.2,.7,.2,1); transition-delay: var(--stagger-delay, 0ms); }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+    .js .section-head.is-visible .section-title-line > span, .js .path-layout > .reveal.is-visible .section-title-line > span { animation: section-line .56s cubic-bezier(.2,.75,.2,1) both; }
+    .js .section-head.is-visible .section-title-line:nth-child(2) > span { animation-delay: .09s; }
+    @keyframes section-line { from { transform: translateY(110%); } to { transform: translateY(0); } }
+
+    /* Projets : filtres, cartes, mini-visuels sans images externes */
+    .filter-row { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+    .filter-label { margin-right: 5px; color: var(--muted-2); font: 400 .61rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .filter-button { padding: 7px 11px; border: 1px solid var(--line); background: transparent; color: var(--muted); font: 400 .64rem var(--mono); cursor: pointer; }
+    .filter-button:hover, .filter-button[aria-pressed="true"] { border-color: var(--accent); background: rgb(var(--accent-rgb) / 11%); color: var(--accent-strong); }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
+    .project-card { --spot-x: 50%; --spot-y: 45%; --tilt-x: 0deg; --tilt-y: 0deg; position: relative; display: flex; min-width: 0; min-height: 360px; flex-direction: column; padding: clamp(20px, 2.5vw, 27px); overflow: hidden; border: 1px solid var(--line); background: linear-gradient(145deg, var(--surface-strong), var(--surface)); transform: perspective(1100px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x)) translateY(0); transform-style: preserve-3d; transition: transform .22s ease; }
+    .project-card::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgb(var(--accent-rgb) / 10%), transparent 66%); transition: opacity .25s ease; }
+    .project-card:hover { border-color: rgb(var(--accent-rgb) / 42%); transform: perspective(1100px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x)) translateY(-3px); }
+    .project-card:hover::before { opacity: 1; }
+    .project-card.featured { grid-column: 1 / -1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 28px; }
+    .project-content, .project-visual { position: relative; z-index: 1; min-width: 0; }
+    .project-index { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font: 500 .62rem var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .project-index::before { content: ""; width: 6px; height: 6px; border: 1px solid currentColor; transform: rotate(45deg); }
+    .project-card h3 { margin: 14px 0 7px; font: 700 clamp(1.22rem, 2vw, 1.55rem)/1.2 var(--display); letter-spacing: -.04em; }
+    .project-meta { margin: 0 0 14px; color: var(--muted-2); font: 400 .63rem/1.6 var(--mono); }
+    .project-copy { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.75; }
+    .project-detail-label { margin: 17px 0 7px; color: var(--accent); font: 500 .61rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .project-list { margin: 0; padding-left: 17px; color: var(--muted); font-size: .78rem; line-height: 1.7; }
+    .project-list li { margin: 5px 0; padding-left: 3px; }
+    .project-list li::marker { color: var(--accent); }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .project-tags span { padding: 4px 7px; border: 1px solid var(--line); color: var(--muted); font: 400 .59rem var(--mono); }
+    .project-actions { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 20px; }
+    .project-link { padding: 0; border: 0; background: none; color: var(--accent); font: 500 .68rem var(--mono); cursor: pointer; text-underline-offset: 4px; }
+    .project-link:hover { text-decoration: underline; }
+    .project-small-note { color: var(--muted-2); font: 400 .58rem var(--mono); }
+    .pipeline-visual { display: flex; min-height: 100%; flex-direction: column; justify-content: center; padding: 22px; border: 1px solid var(--line); background: var(--surface-soft); }
+    .visual-kicker { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 19px; color: var(--muted-2); font: 400 .59rem var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .visual-kicker strong { color: var(--accent); font-weight: 400; }
+    .pipeline-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+    .pipeline-step { position: relative; padding: 10px 3px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); text-align: center; font: 400 .56rem var(--mono); animation: step-glow 5s ease-in-out infinite; animation-delay: calc(var(--step) * .34s); }
+    .pipeline-step:not(:last-child)::after { content: "›"; position: absolute; top: 50%; right: -7px; z-index: 2; color: var(--accent); transform: translateY(-50%); }
+    .pipeline-step:last-child { color: var(--accent); }
+    @keyframes step-glow { 0%, 14%, 100% { opacity: .72; transform: translateY(0); } 6% { opacity: 1; transform: translateY(-2px); } }
+    .pipeline-caption { margin: 15px 0 0; color: var(--muted-2); font: 400 .59rem/1.55 var(--mono); }
+
+    /* Maquette CSS LawyerSoft */
+    .lawyer-visual { display: flex; min-height: 130px; flex-direction: column; justify-content: center; gap: 9px; margin-top: auto; padding: 14px; border: 1px solid var(--line); background: var(--surface-soft); }
+    .lawyer-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 9px; border-bottom: 1px solid var(--line); color: var(--muted-2); font: 400 .55rem var(--mono); text-transform: uppercase; }
+    .lawyer-top i { width: 18px; height: 5px; border-radius: 4px; background: rgb(var(--accent-rgb) / 45%); }
+    .case-row { display: grid; grid-template-columns: 8px minmax(0,1fr) auto; align-items: center; gap: 8px; color: var(--muted); font-size: .59rem; }
+    .case-row i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+    .case-row:nth-child(3) i { background: var(--gold); }
+    .case-row b { color: var(--muted-2); font: 400 .52rem var(--mono); }
+
+    /* Illustration conceptuelle de vision par ordinateur */
+    .scan-visual { position: relative; display: grid; min-height: 130px; place-items: center; margin-top: auto; overflow: hidden; border: 1px solid var(--line); background: radial-gradient(ellipse at center, rgb(var(--accent-rgb) / 8%), transparent 62%), var(--surface-soft); }
+    .scan-grid { position: absolute; inset: 0; opacity: .3; background-image: linear-gradient(rgb(var(--accent-rgb) / 8%) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--accent-rgb) / 8%) 1px, transparent 1px); background-size: 20px 20px; }
+    .face-shape { position: relative; width: 42px; height: 58px; border: 1px solid rgb(var(--accent-rgb) / 58%); border-radius: 48% 48% 44% 44%; }
+    .face-shape::before { content: ""; position: absolute; left: 9px; right: 9px; top: 22px; height: 2px; background: var(--accent); box-shadow: 0 0 9px rgb(var(--accent-rgb) / 65%); }
+    .face-shape::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 9px; height: 1px; background: rgb(var(--accent-rgb) / 50%); }
+    .scan-frame { position: absolute; width: 64px; height: 76px; border: 1px solid rgb(var(--accent-rgb) / 50%); }
+    .scan-frame::before, .scan-frame::after { content: ""; position: absolute; width: 9px; height: 9px; border-color: var(--accent); border-style: solid; }
+    .scan-frame::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }.scan-frame::after { right: -1px; bottom: -1px; border-width: 0 1px 1px 0; }
+    .scan-line { position: absolute; left: 12%; right: 12%; top: 15%; height: 1px; background: var(--accent); opacity: .78; box-shadow: 0 0 8px rgb(var(--accent-rgb) / 60%); animation: scan 3.2s ease-in-out infinite alternate; }
+    @keyframes scan { to { transform: translateY(82px); } }
+    .scan-label { position: absolute; right: 10px; bottom: 8px; color: var(--muted-2); font: 400 .52rem var(--mono); }
+
+    /* Modale projet accessible */
+    .project-dialog { width: min(680px, calc(100% - 32px)); max-height: min(82vh, 760px); padding: 0; overflow: auto; border: 1px solid var(--line); background: var(--surface); color: var(--ink); box-shadow: 0 35px 100px rgb(0 0 0 / 42%); }
+    .project-dialog::backdrop { background: rgb(4 10 19 / 74%); backdrop-filter: blur(5px); }
+    .dialog-inner { padding: clamp(22px, 5vw, 38px); }
+    .dialog-head { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+    .dialog-close { flex: 0 0 auto; width: 36px; height: 36px; border: 1px solid var(--line); background: transparent; color: var(--muted); font-size: 1.1rem; cursor: pointer; }
+    .dialog-close:hover { color: var(--accent); border-color: var(--accent); }
+    .dialog-kicker { margin: 0 0 8px; color: var(--accent); font: 500 .64rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .dialog-title { margin: 0; font: 700 clamp(1.5rem, 4vw, 2.1rem)/1.12 var(--display); letter-spacing: -.04em; }
+    .dialog-meta { margin: 12px 0 0; color: var(--muted-2); font: 400 .68rem/1.6 var(--mono); }
+    .dialog-divider { height: 1px; margin: 23px 0; border: 0; background: var(--line); }
+    .dialog-body { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 26px; }
+    .dialog-block h3 { margin: 0 0 7px; color: var(--accent); font: 500 .63rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .dialog-block p, .dialog-block li { color: var(--muted); font-size: .83rem; line-height: 1.7; }
+    .dialog-block p { margin: 0; }
+    .dialog-block ul { margin: 0; padding-left: 18px; }
+    .dialog-block li { margin: 5px 0; }
+    .dialog-block li::marker { color: var(--accent); }
+    .dialog-techs { display: flex; flex-wrap: wrap; gap: 6px; }
+    .dialog-techs span { padding: 5px 8px; border: 1px solid var(--line); color: var(--muted); font: 400 .62rem var(--mono); }
+
+    /* Parcours */
+    .path-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(34px, 7vw, 84px); }
+    .path-intro { max-width: 300px; margin: 17px 0 0; color: var(--muted); font-size: .88rem; }
+    .timeline { position: relative; padding-left: 25px; border-left: 1px solid var(--line); }
+    .timeline::before { content: ""; position: absolute; left: -1px; top: 0; width: 2px; height: 100%; background: var(--accent); transform: scaleY(var(--timeline-progress, 0)); transform-origin: top; opacity: .7; transition: transform .72s ease; }
+    .timeline-item { position: relative; padding: 0 0 27px 3px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before { content: ""; position: absolute; left: -32px; top: 6px; width: 13px; height: 13px; border: 2px solid var(--accent); border-radius: 50%; background: var(--bg); transform: scale(.65); transition: transform .3s ease; }
+    .timeline.is-visible .timeline-item::before { background: var(--accent); transform: scale(1); }
+    .timeline-item time { color: var(--accent); font: 400 .66rem var(--mono); letter-spacing: .04em; }
+    .timeline-item h3 { margin: 6px 0 3px; font: 600 1rem/1.48 var(--display); letter-spacing: -.02em; }
+    .timeline-item p { margin: 0; color: var(--muted); font-size: .82rem; }
+
+    /* Compétences */
+    .skills-section { background: rgb(var(--accent-rgb) / 3%); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+    .skill-card { min-height: 205px; padding: 22px; border: 1px solid var(--line); background: var(--surface); transition: transform .24s ease; }
+    .skill-card:hover { transform: translateY(-3px); border-color: rgb(var(--accent-rgb) / 45%); background: var(--surface-strong); }
+    .skill-number { color: var(--accent); font: 400 .6rem var(--mono); }
+    .skill-card h3 { margin: 12px 0 15px; font: 600 1rem var(--display); letter-spacing: -.02em; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tags span { padding: 5px 7px; border: 1px solid var(--line); color: var(--muted); font-size: .69rem; }
+    .skill-card:hover .skill-tags span { border-color: rgb(var(--accent-rgb) / 25%); }
+
+    /* Contact et pied de page */
+    .contact-panel { position: relative; display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: end; gap: 28px; padding: clamp(25px, 5vw, 52px); border: 1px solid rgb(var(--accent-rgb) / 30%); background: radial-gradient(ellipse at 88% 100%, rgb(var(--accent-rgb) / 9%), transparent 45%), var(--surface); }
+    .contact-panel h2 { max-width: 670px; }
+    .contact-copy { max-width: 520px; margin: 14px 0 0; color: var(--muted); font-size: .88rem; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+    .contact-actions .button { min-height: 40px; padding-inline: 11px; font-size: .7rem; }
+    .social-placeholder { display: inline-flex; align-items: center; min-height: 40px; padding: 0 10px; border: 1px dashed var(--line); color: var(--muted-2); font: 400 .62rem var(--mono); }
+    .toast { position: fixed; right: 20px; bottom: 20px; z-index: 90; padding: 10px 14px; border: 1px solid rgb(var(--accent-rgb) / 44%); background: var(--surface-strong); color: var(--ink); box-shadow: 0 12px 30px rgb(0 0 0 / 24%); font-size: .78rem; opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+    .toast.is-visible { opacity: 1; transform: none; }
+    footer { padding: 22px 0 32px; color: var(--muted-2); font: 400 .63rem var(--mono); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-inner p { margin: 0; }
+    .back-top { color: var(--accent); text-decoration: none; }
+    .back-top:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    /* Curseur personnalisé, activé uniquement sur souris fine et sans réduction du mouvement. */
+     .theme-wash { position: fixed; inset: 0; z-index: 49; pointer-events: none; opacity: 0; background: var(--bg); }
+    .custom-cursor { position: fixed; top: 0; left: 0; z-index: 130; width: 22px; height: 22px; border: 1px solid var(--accent); border-radius: 50%; opacity: 0; pointer-events: none; transform: translate3d(var(--cursor-x, -100px), var(--cursor-y, -100px), 0) translate(-50%, -50%) scale(1); transition: transform .16s ease, opacity .16s ease; }
+    .has-custom-cursor .custom-cursor { opacity: .7; }
+    .has-custom-cursor .custom-cursor.is-hovering { transform: translate3d(var(--cursor-x, -100px), var(--cursor-y, -100px), 0) translate(-50%, -50%) scale(1.55); background: rgb(var(--accent-rgb) / 10%); }
+    @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) { .has-custom-cursor, .has-custom-cursor a, .has-custom-cursor button { cursor: none; } }
+
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @media (max-width: 980px) {
+      :root { --header-height: 68px; }
+      .hero-grid { grid-template-columns: minmax(0,1fr) minmax(310px,.9fr); gap: 30px; }
+      h1 { font-size: clamp(3rem, 5.6vw, 4.55rem); }
+      .terminal-scene::before { width: 280px; height: 280px; right: -15px; }
+      .terminal-scene::after { width: 225px; height: 225px; right: 15px; }
+      .project-card.featured { grid-template-columns: minmax(0,1fr) minmax(245px,.75fr); gap: 20px; }
     }
-    @media (max-width: 850px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
-      .hero { min-height: unset; padding-top: 76px; }
-      h1 { font-size: clamp(2.9rem, 7.8vw, 5.2rem); line-height: .98; letter-spacing: -.065em; }
-      h1 .line { white-space: normal; }
-      .visual-wrap { min-height: 350px; }
-      .hero::before { right: -380px; }
-      .project.project-wide { grid-template-columns: 1fr; }
-      .project-visual { width: 100%; max-width: 540px; }
-      .path-layout { grid-template-columns: 1fr; gap: 20px; }
-      .path-lead { max-width: 600px; }
-      .contact-panel { align-items: start; flex-direction: column; }
-    }
-    @media (max-width: 600px) {
-      .wrap { width: calc(100% - 36px); }
-      .header-inner { min-height: 64px; }
-      .nav { gap: 12px; }
+    @media (max-width: 760px) {
+      .wrap { width: min(var(--max), calc(100% - 40px)); }
+      .header-inner { min-height: 66px; gap: 12px; }
+      .nav-tools { gap: 10px; }
+      .nav { gap: 15px; }
       .nav a { font-size: .72rem; }
-      .nav a:nth-child(2), .nav a:nth-child(3) { display: none; }
-      .nav .nav-cta { padding: 7px 10px; }
-      .hero { padding: 66px 0 58px; }
-      h1 { font-size: clamp(2.8rem, 13vw, 4.25rem); line-height: 1; letter-spacing: -.06em; }
-      h1 .line { white-space: normal; }
-      .visual-wrap { min-height: 330px; margin-top: 4px; }
-      .cube-scene { top: -2%; right: 0; width: 130px; height: 130px; opacity: .36; }
-      .cube-3d { --cube-half: 32px; }
-      .orbit { width: 320px; max-width: 100%; }
-      .tech-card { width: min(320px, 84%); padding: 18px; }
-      .scroll-hint { bottom: 10px; }
+      .nav a:nth-child(2) { display: none; }
+      .hero { min-height: auto; padding: 68px 0 58px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 25px; }
+      h1 { max-width: 620px; font-size: clamp(3rem, 10vw, 4.8rem); }
+      .terminal-scene { width: min(100%, 560px); margin: 0 auto; padding: 10px 0 18px; }
+      .terminal-card { margin-inline: auto; }
+      .scroll-cue { display: none; }
+      .section-head { align-items: start; flex-direction: column; gap: 14px; }
+      .section-intro { max-width: 560px; }
+      .path-layout { grid-template-columns: 1fr; gap: 28px; }
+      .path-intro { max-width: 560px; }
+      .skills-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .project-card.featured { grid-template-columns: 1fr; }
+      .pipeline-visual { min-height: 150px; }
+    }
+    @media (max-width: 540px) {
+      .wrap { width: calc(100% - 34px); }
+      .brand { font-size: .69rem; gap: 7px; }
+      .brand-symbol { width: 29px; height: 29px; }
+      .header-inner { min-height: 62px; }
+      .nav { gap: 10px; }
+      .nav a { font-size: .67rem; }
+      .nav a:nth-child(3) { display: none; }
+      .nav-tools { gap: 6px; }
+      .nav-tools button { min-width: 32px; height: 31px; padding-inline: 7px; }
+      .hero { padding: 56px 0 52px; }
+      h1 { font-size: clamp(2.65rem, 12.5vw, 3.75rem); line-height: 1.02; letter-spacing: -.06em; }
+      .hero-summary { font-size: .88rem; }
+      .hero-actions { gap: 8px; }
+      .button { min-height: 43px; padding-inline: 11px; font-size: .7rem; }
+      .terminal-card { padding: 17px; }
+      .terminal-title { font-size: .94rem; }
+      .pipeline-tab { font-size: .53rem; }
       section.content-section { padding: 68px 0; }
-      .section-head { align-items: start; flex-direction: column; gap: 14px; margin-bottom: 25px; }
+      h2 { font-size: clamp(1.9rem, 9vw, 2.65rem); }
       .projects-grid { grid-template-columns: 1fr; }
-      .project.project-wide { grid-column: auto; }
-      .project { min-height: 280px; padding: 21px; }
-      .project-visual { padding: 13px 10px; }
-      .pipeline { gap: 4px; }
-      .pipeline span { font-size: .5rem; }
-      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+      .project-card.featured { grid-column: auto; }
+      .project-card { min-height: 0; padding: 21px; }
+      .project-card.featured { min-height: 0; }
+      .project-actions { padding-top: 17px; }
+      .pipeline-visual { padding: 17px 13px; }
+      .pipeline-step { font-size: .49rem; }
       .skills-grid { grid-template-columns: 1fr; }
-      .skill-card { min-height: auto; }
-      .footer-inner { flex-direction: column; }
+      .skill-card { min-height: 0; }
+      .contact-panel { grid-template-columns: 1fr; align-items: start; }
+      .contact-actions { gap: 7px; }
+      .contact-actions .button { font-size: .65rem; }
+      .social-placeholder { font-size: .56rem; }
+      .dialog-body { grid-template-columns: 1fr; gap: 16px; }
+      .footer-inner { align-items: start; flex-direction: column; }
+      .toast { right: 12px; bottom: 12px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .js .preloader { display: none !important; }
+      .js body:not(.intro-ready) .line-inner { transform: none; }
       .js .reveal { opacity: 1; transform: none; }
+      .custom-cursor { display: none !important; }
+      .project-card, .terminal-card { transform: none !important; }
+    }
+    @media print {
+      .header, .scroll-progress, .preloader, .custom-cursor, .ticker, .hero-actions, .filter-row, .project-actions, .scroll-cue { display: none !important; }
+      body { color: #142238; background: white; }
+      .hero { min-height: 0; padding: 30px 0; }
+      .content-section { padding: 28px 0 !important; break-inside: avoid; }
+      .project-card { color: #142238; background: white; break-inside: avoid; }
     }
   </style>
-  <script>document.documentElement.classList.add('js');</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohamed Chiheb Ben Jeddou",
+    "jobTitle": "Élève ingénieur en informatique",
+    "email": "mailto:Chihebbenjeddou1@gmail.com",
+    "telephone": "+21699191693",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Menzel Bourguiba",
+      "addressRegion": "Bizerte",
+      "addressCountry": "TN"
+    },
+    "knowsAbout": ["IA", "Data Science", "Développement web", "DevOps", "Docker", "GitLab CI/CD", "Kubernetes", "Angular", "Spring Boot", "PostgreSQL"]
+  }
+  </script>
 </head>
 <body>
-  <header class="header">
+  <a class="skip-link" href="#contenu" data-i18n="skip">Aller au contenu</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <div class="preloader" aria-hidden="true"><span class="preloader-mark">CB</span></div>
+  <div class="theme-wash" aria-hidden="true"></div>
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <header class="header" id="site-header">
     <div class="wrap header-inner">
-          <a class="brand" href="#accueil" aria-label="Chiheb Ben Jeddou, accueil"><span class="brand-symbol" aria-hidden="true">CB</span><span>CHIHEB BEN JEDDOU</span></a>
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="#projets">Projets</a><a href="#parcours">Parcours</a><a href="#competences">Stack</a><a class="nav-cta" href="#contact">Contact ↗</a>
-      </nav>
+      <a class="brand" href="#accueil" aria-label="Chiheb Ben Jeddou — accueil" data-i18n-aria="brandAria"><span class="brand-symbol" aria-hidden="true">CB</span><span>CHIHEB BEN JEDDOU</span></a>
+      <div class="nav-tools">
+        <nav class="nav" aria-label="Navigation principale" data-i18n-aria="navAria">
+          <a href="#projets" data-nav="projets" data-i18n="navProjects">Projets</a>
+          <a href="#parcours" data-nav="parcours" data-i18n="navPath">Parcours</a>
+          <a href="#competences" data-nav="competences" data-i18n="navSkills">Compétences</a>
+          <a class="nav-contact" href="#contact" data-nav="contact" data-i18n="navContact">Contact ↗</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Activer le thème clair" title="Activer le thème clair">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+        </button>
+        <button id="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
+      </div>
     </div>
   </header>
 
-  <main id="accueil">
-    <section class="hero" aria-labelledby="hero-title">
+  <main id="contenu">
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
-        <div class="hero-copy-wrap">
-          <p class="availability">Disponible pour échanger</p>
-          <p class="hero-kicker">Portfolio / 2026</p>
-          <h1 id="hero-title"><span class="line">Mohamed Chiheb</span><span class="line">Ben Jeddou.</span></h1>
-          <p class="hero-role">Élève ingénieur · Informatique, IA &amp; Data Science</p>
-          <p class="hero-copy">Je développe des applications web, j’y intègre de l’intelligence artificielle et je construis les pipelines qui les mènent jusqu’à leur déploiement.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#projets">Explorer les projets <span class="button-arrow" aria-hidden="true">↓</span></a><a class="button button-outline" href="CV.pdf">Télécharger mon CV <span class="button-arrow" aria-hidden="true">↗</span></a></div>
+        <div class="hero-copy intro-reveal">
+          <p class="availability" data-i18n="availability">Disponible pour échanger</p>
+          <p class="eyebrow"><span data-i18n="heroEyebrow">Portfolio ·</span> <span id="year-hero">2026</span></p>
+          <h1 id="hero-title"><span class="line-mask"><span class="line-inner">Mohamed Chiheb</span></span><span class="line-mask"><span class="line-inner">Ben Jeddou.</span></span></h1>
+          <p class="hero-role-label" data-i18n="roleLabel">Domaines d’intérêt</p>
+          <p class="role-rotator" aria-hidden="true"><span id="role-text">IA &amp; Data Science</span></p>
+          <p class="sr-only" data-i18n="roleSr">Domaines : IA et Data Science, développement web, DevOps et CI/CD.</p>
+          <p class="hero-summary" data-i18n="heroSummary">Je conçois des applications web, j’y intègre des solutions d’intelligence artificielle et je travaille à leur déploiement fiable, du code jusqu’à la production.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projets" data-magnetic><span data-i18n="heroCtaProjects">Découvrir mes projets</span><span class="button-arrow" aria-hidden="true">↓</span></a>
+            <a class="button button-outline" href="CV.pdf" download data-magnetic><span data-i18n="heroCtaCv">Télécharger mon CV</span><span class="button-arrow" aria-hidden="true">↗</span></a>
+          </div>
         </div>
-        <div class="visual-wrap" aria-label="Illustration abstraite de développement et de déploiement">
-          <div class="cube-scene" aria-hidden="true"><div class="cube-3d"><span class="cube-face cube-front">01</span><span class="cube-face cube-back">02</span><span class="cube-face cube-right">03</span><span class="cube-face cube-left">04</span><span class="cube-face cube-top">05</span><span class="cube-face cube-bottom">06</span></div></div>
-          <div class="orbit" aria-hidden="true"><i class="orbit-node"></i></div>
-          <span class="floating-label label-one">// BUILD · SHIP</span>
-          <span class="floating-label label-two">IA + WEB + DEVOPS</span>
-          <div class="tech-card">
-            <div class="tech-head"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>portfolio / stack</span></div>
-            <div class="code-lines" aria-label="Aperçu de technologies">
-              <p><span class="code-muted">01</span> &nbsp;<span class="code-blue">const</span> <span class="code-green">focus</span> = [</p>
-              <p class="indent"><span class="code-warm">"web development"</span>,</p>
-              <p class="indent"><span class="code-warm">"artificial intelligence"</span>,</p>
-              <p class="indent"><span class="code-warm">"continuous delivery"</span></p>
-              <p>];</p>
+
+        <div class="terminal-scene" id="terminal-scene">
+          <div class="terminal-card" id="terminal-card" role="group" aria-label="Carte interactive du pipeline DevOps" data-i18n-aria="terminalAria">
+            <div class="terminal-top"><span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="terminal-label" data-i18n="terminalLabel">Aperçu · CI/CD</span></div>
+            <p class="terminal-kicker" data-i18n="terminalKicker">Projet DevOps</p>
+            <h2 class="terminal-title" data-i18n="terminalTitle">Une chaîne de livraison, étape par étape.</h2>
+            <div class="terminal-code" aria-hidden="true"><span class="code-comment"># GitLab CI/CD · 5 stages</span><br><span class="code-blue">stages:</span> <span class="code-soft">[build, test, docker, deploy, k8s]</span></div>
+            <div class="pipeline-tabs" role="tablist" aria-label="Étapes du pipeline CI/CD" data-i18n-aria="pipelineTabsAria">
+              <button class="pipeline-tab" id="tab-build" type="button" role="tab" aria-selected="true" aria-controls="pipeline-panel" tabindex="0" data-stage="build">build</button>
+              <button class="pipeline-tab" id="tab-test" type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-stage="test">test</button>
+              <button class="pipeline-tab" id="tab-docker" type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-stage="docker">docker</button>
+              <button class="pipeline-tab" id="tab-deploy" type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-stage="deploy">deploy</button>
+              <button class="pipeline-tab" id="tab-k8s" type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-stage="k8s">k8s</button>
             </div>
-            <div class="status-row"><span>pipeline_status</span><strong>● READY</strong></div>
+            <p class="pipeline-copy" id="pipeline-panel" role="tabpanel" aria-labelledby="tab-build" data-i18n="pipelineBuild">Construction des images multi-stage pour les services applicatifs.</p>
+            <div class="pipeline-status"><span data-i18n="pipelineStatus">Pipeline · 5 étapes</span><strong><span aria-hidden="true">●</span> <span data-i18n="pipelineDemo">Aperçu</span></strong></div>
           </div>
         </div>
       </div>
-      <div class="scroll-hint" aria-hidden="true">Scroll pour explorer</div>
+      <div class="scroll-cue" aria-hidden="true" data-i18n="scrollCue">Défiler pour explorer</div>
     </section>
 
-    <div class="ticker" aria-label="Domaines : développement web, intelligence artificielle, DevOps, automatisation">
+    <div class="ticker" aria-label="Domaines professionnels">
       <div class="ticker-track" aria-hidden="true">
-        <span class="ticker-item">Web Development</span><span class="ticker-item">Artificial Intelligence</span><span class="ticker-item">DevOps &amp; CI/CD</span><span class="ticker-item">Data Science</span><span class="ticker-item">Web Development</span><span class="ticker-item">Artificial Intelligence</span><span class="ticker-item">DevOps &amp; CI/CD</span><span class="ticker-item">Data Science</span>
+        <span class="ticker-item">IA &amp; Data Science</span><span class="ticker-item">Développement web</span><span class="ticker-item">DevOps &amp; CI/CD</span><span class="ticker-item">Docker &amp; Kubernetes</span>
+        <span class="ticker-item">IA &amp; Data Science</span><span class="ticker-item">Développement web</span><span class="ticker-item">DevOps &amp; CI/CD</span><span class="ticker-item">Docker &amp; Kubernetes</span>
       </div>
     </div>
 
     <section class="content-section" id="projets" aria-labelledby="projects-title">
       <div class="wrap">
         <div class="section-head reveal">
-              <div><p class="section-label">01 / Projets sélectionnés</p><h2 id="projects-title">Du développement.<br><span class="lime">À la livraison.</span></h2></div>
-          <p class="section-intro">Trois expériences complémentaires. Filtrez par domaine pour découvrir les missions et les outils utilisés.</p>
+          <div><p class="section-label" data-i18n="projectsEyebrow">01 / Expériences</p><h2 id="projects-title"><span class="section-title-line"><span data-i18n="projectsTitle1">Développement</span></span><span class="section-title-line"><span class="accent" data-i18n="projectsTitle2">et mise en œuvre.</span></span></h2></div>
+          <p class="section-intro" data-i18n="projectsIntro">Trois stages complémentaires autour du web, de l’intelligence artificielle et de l’industrialisation logicielle. Ouvrez une fiche pour consulter le contexte, les contributions et les technologies.</p>
         </div>
         <div class="filter-row" role="group" aria-label="Filtrer les projets par domaine">
-          <span class="filter-label">Filtrer</span>
-          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">Tous</button>
-          <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web</button>
-          <button class="filter-button" type="button" data-filter="ia" aria-pressed="false">IA</button>
-          <button class="filter-button" type="button" data-filter="devops" aria-pressed="false">DevOps</button>
+          <span class="filter-label" data-i18n="filterLabel">Filtrer</span>
+          <button class="filter-button" type="button" data-filter="all" aria-pressed="true" data-i18n="filterAll">Tous</button>
+          <button class="filter-button" type="button" data-filter="web" aria-pressed="false" data-i18n="filterWeb">Web</button>
+          <button class="filter-button" type="button" data-filter="ia" aria-pressed="false" data-i18n="filterAi">IA</button>
+          <button class="filter-button" type="button" data-filter="devops" aria-pressed="false" data-i18n="filterDevops">DevOps</button>
         </div>
+
         <div class="projects-grid" id="project-list">
-          <article class="project project-wide reveal" data-category="devops" data-number="03">
-            <div>
-              <div class="project-top">Stage DevOps / CI-CD</div>
-              <h3>Industrialisation d’une application 3-tiers</h3>
-              <p class="project-meta">Application de gestion de smartphones · Architecture trois-tiers</p>
-              <p class="project-copy">Objectif : automatiser le cycle de livraison d’une application trois-tiers, depuis la construction des images jusqu’au déploiement sur Kubernetes.</p>
-              <p class="project-detail-label">Contributions principales</p>
+          <article class="project-card featured reveal" data-category="devops" data-project="devops" data-tilt>
+            <div class="project-content">
+              <span class="project-index" data-i18n="devopsIndex">01 · Stage DevOps / CI-CD</span>
+              <h3 data-i18n="devopsTitle">Industrialisation d’une application trois-tiers</h3>
+              <p class="project-meta" data-i18n="devopsMeta">Application de gestion de smartphones · Architecture trois-tiers</p>
+              <p class="project-copy" data-i18n="devopsSummary">Objectif : automatiser le cycle de livraison, de la construction des images au déploiement sur Kubernetes.</p>
+              <p class="project-detail-label" data-i18n="contributionsLabel">Contributions principales</p>
               <ul class="project-list">
-                <li>Dockerfiles multi-stage et orchestration locale avec Docker Compose.</li>
-                <li>Pipeline GitLab CI/CD en cinq étapes et publication des images dans le Container Registry, taguées par SHA de commit.</li>
-                <li>Manifestes k3s : StatefulSet PostgreSQL, Secrets, PVC, Ingress et sondes.</li>
-                <li>Résolution d’incidents réseau en CI, tests Angular headless et CORS / HTTPS.</li>
-                <li>Pratique agile : sprints, Kanban GitLab et merge requests.</li>
+                <li data-i18n="devopsBullet1">Dockerfiles multi-stage et orchestration locale avec Docker Compose.</li>
+                <li data-i18n="devopsBullet2">Pipeline GitLab CI/CD en cinq étapes et publication des images dans le Container Registry, taguées par SHA de commit.</li>
+                <li data-i18n="devopsBullet3">Manifestes k3s : StatefulSet PostgreSQL, Secrets, PVC, Ingress et sondes readiness / liveness.</li>
+                <li data-i18n="devopsBullet4">Résolution de problèmes de réseau en CI, tests Angular headless et configuration CORS / HTTPS.</li>
+                <li data-i18n="devopsBullet5">Travail en méthode agile : sprints, tableau Kanban GitLab et merge requests.</li>
               </ul>
-              <p class="project-detail-label">Technologies</p>
-              <div class="project-tags"><span>Docker</span><span>GitLab CI/CD</span><span>Kubernetes</span><span>k3s</span><span>Nginx</span><span>ASP.NET Core</span><span>Angular</span><span>PostgreSQL</span></div>
+              <p class="project-detail-label" data-i18n="technologiesLabel">Technologies</p>
+              <div class="project-tags"><span>Docker</span><span>GitLab CI/CD</span><span>Kubernetes</span><span>k3s</span><span>Nginx</span><span>ASP.NET Core 8</span><span>Angular</span><span>PostgreSQL</span></div>
+              <div class="project-actions"><button class="project-link" type="button" data-open-project="devops"><span data-i18n="projectDetails">Voir le détail du projet</span> ↗</button><span class="project-small-note" data-i18n="devopsResult">Livrable · pipeline et manifestes de déploiement</span></div>
             </div>
-            <div class="project-visual" aria-label="Aperçu des étapes de la chaîne CI/CD">
-              <div class="visual-caption"><span>Chaîne CI/CD</span><b>5 étapes</b></div>
-              <div class="pipeline"><span>build</span><span>test</span><span>docker</span><span>deploy</span><span>k8s</span></div>
-              <div class="visual-note"><i></i> Images traçables · déploiement automatisé</div>
+            <div class="project-visual pipeline-visual" role="img" aria-label="Pipeline en cinq étapes : build, test, docker, deploy, Kubernetes" data-i18n-aria="pipelineVisualAria">
+              <div class="visual-kicker"><span data-i18n="pipelineHeading">Chaîne CI/CD</span><strong data-i18n="pipelineFive">5 étapes</strong></div>
+              <div class="pipeline-steps" aria-hidden="true"><span class="pipeline-step" style="--step:0">build</span><span class="pipeline-step" style="--step:1">test</span><span class="pipeline-step" style="--step:2">docker</span><span class="pipeline-step" style="--step:3">deploy</span><span class="pipeline-step" style="--step:4">k8s</span></div>
+              <p class="pipeline-caption" data-i18n="pipelineVisualCaption">Construction, tests, conteneurisation et déploiement automatisé.</p>
             </div>
           </article>
-          <article class="project reveal" data-category="web" data-number="01">
-            <div class="project-top">Stage PFE · Teamsyst</div>
-            <h3>LawyerSoft</h3>
-            <p class="project-meta">Tunis · 5 mois · Développement web</p>
-            <p class="project-copy">Contribution : développement d’une application web complète pour la gestion de cabinets d’avocats, avec un backend Spring Boot et une interface Angular.</p>
-            <p class="project-detail-label">Technologies</p>
-            <div class="project-tags"><span>Java</span><span>Spring Boot</span><span>Angular</span></div>
+
+          <article class="project-card reveal" data-category="web" data-project="lawyer" data-tilt>
+            <div class="project-content">
+              <span class="project-index" data-i18n="lawyerIndex">02 · Stage PFE · Teamsyst</span>
+              <h3>LawyerSoft</h3>
+              <p class="project-meta" data-i18n="lawyerMeta">Tunis · Stage de cinq mois · Développement web</p>
+              <p class="project-copy" data-i18n="lawyerSummary">Contribution : développement d’une application web complète pour la gestion de cabinets d’avocats, avec un backend Spring Boot et une interface Angular.</p>
+              <p class="project-detail-label" data-i18n="technologiesLabel">Technologies</p>
+              <div class="project-tags"><span>Java</span><span>Spring Boot</span><span>Angular</span></div>
+            </div>
+            <div class="lawyer-visual" role="img" aria-label="Illustration d’interface de gestion de dossiers, à titre conceptuel" data-i18n-aria="lawyerVisualAria">
+              <div class="lawyer-top"><span data-i18n="lawyerMockTitle">Aperçu conceptuel · dossiers</span><i aria-hidden="true"></i></div>
+              <div class="case-row"><i aria-hidden="true"></i><span data-i18n="caseOne">Dossier client</span><b>01</b></div>
+              <div class="case-row"><i aria-hidden="true"></i><span data-i18n="caseTwo">Suivi de procédure</span><b>02</b></div>
+              <div class="case-row"><i aria-hidden="true"></i><span data-i18n="caseThree">Documents</span><b>03</b></div>
+            </div>
+            <div class="project-actions"><button class="project-link" type="button" data-open-project="lawyer"><span data-i18n="projectDetails">Voir le détail du projet</span> ↗</button></div>
           </article>
-          <article class="project reveal" data-category="ia" data-number="02">
-            <div class="project-top">Stage d’été · ELFOULADH</div>
-            <h3>Reconnaissance faciale</h3>
-            <p class="project-meta">Tunis · Intelligence artificielle</p>
-            <p class="project-copy">Contribution : réalisation d’une application intégrant l’IA pour capturer et identifier un visage, puis enregistrer le résultat dans PostgreSQL.</p>
-            <p class="project-detail-label">Technologies &amp; domaine</p>
-            <div class="project-tags"><span>IA</span><span>Reconnaissance faciale</span><span>PostgreSQL</span></div>
+
+          <article class="project-card reveal" data-category="ia" data-project="facial" data-tilt>
+            <div class="project-content">
+              <span class="project-index" data-i18n="facialIndex">03 · Stage d’été · ELFOULADH</span>
+              <h3 data-i18n="facialTitle">Application de reconnaissance faciale</h3>
+              <p class="project-meta" data-i18n="facialMeta">Tunis · Intelligence artificielle</p>
+              <p class="project-copy" data-i18n="facialSummary">Contribution : réalisation d’une application intégrant l’IA pour capturer et identifier un visage, puis enregistrer le résultat dans PostgreSQL.</p>
+              <p class="project-detail-label" data-i18n="facialTechLabel">Technologies &amp; domaine</p>
+              <div class="project-tags"><span>IA</span><span data-i18n="faceRecognition">Reconnaissance faciale</span><span>PostgreSQL</span></div>
+            </div>
+            <div class="scan-visual" role="img" aria-label="Illustration conceptuelle de détection de visage, sans photographie" data-i18n-aria="faceVisualAria">
+              <div class="scan-grid" aria-hidden="true"></div><div class="face-shape" aria-hidden="true"></div><div class="scan-frame" aria-hidden="true"></div><div class="scan-line" aria-hidden="true"></div><span class="scan-label" data-i18n="scanMockLabel">Illustration conceptuelle</span>
+            </div>
+            <div class="project-actions"><button class="project-link" type="button" data-open-project="facial"><span data-i18n="projectDetails">Voir le détail du projet</span> ↗</button></div>
           </article>
         </div>
       </div>
@@ -351,21 +571,21 @@
 
     <section class="content-section" id="parcours" aria-labelledby="path-title">
       <div class="wrap path-layout">
-        <div class="reveal"><p class="section-label">02 / Parcours</p><h2 id="path-title">Apprendre.<br><span class="lime">Construire.</span></h2><p class="path-lead">Une formation en informatique tournée vers l’ingénierie logicielle, l’intelligence artificielle et la science des données.</p></div>
-        <div class="timeline reveal">
-          <article class="timeline-item"><time datetime="2024">2024 — présent</time><div><h3>Diplôme National d’Ingénieur en informatique — IA &amp; Data Science</h3><p>iTeam University, Tunis</p></div></article>
-          <article class="timeline-item"><time datetime="2021">2021 — 2023</time><div><h3>Licence nationale en informatique appliquée à la gestion</h3><p>ISG Gabès</p></div></article>
+        <div class="reveal"><p class="section-label" data-i18n="pathEyebrow">02 / Formation</p><h2 id="path-title"><span class="section-title-line"><span data-i18n="pathTitle1">Apprendre.</span></span><span class="section-title-line"><span class="accent" data-i18n="pathTitle2">Construire.</span></span></h2><p class="path-intro" data-i18n="pathIntro">Une formation en informatique orientée vers l’ingénierie logicielle, l’intelligence artificielle et la science des données.</p></div>
+        <div class="timeline reveal" id="timeline">
+          <article class="timeline-item"><time datetime="2024">2024 — <span data-i18n="present">présent</span></time><div><h3 data-i18n="degreeEngineer">Diplôme National d’Ingénieur en informatique — IA &amp; Data Science</h3><p>iTeam University, Tunis</p></div></article>
+          <article class="timeline-item"><time datetime="2021">2021 — 2023</time><div><h3 data-i18n="degreeLicence">Licence nationale en informatique appliquée à la gestion</h3><p>ISG Gabès</p></div></article>
         </div>
       </div>
     </section>
 
     <section class="content-section skills-section" id="competences" aria-labelledby="skills-title">
       <div class="wrap">
-        <div class="section-head reveal"><div><p class="section-label">03 / Stack &amp; méthodes</p><h2 id="skills-title">Outils du quotidien.</h2></div><p class="section-intro">Technologies et méthodes mobilisées pendant ma formation et mes expériences professionnelles.</p></div>
+        <div class="section-head reveal"><div><p class="section-label" data-i18n="skillsEyebrow">03 / Compétences</p><h2 id="skills-title"><span class="section-title-line"><span data-i18n="skillsTitle">Technologies &amp; méthodes.</span></span></h2></div><p class="section-intro" data-i18n="skillsIntro">Les outils et pratiques mobilisés dans mes projets et expériences.</p></div>
         <div class="skills-grid">
-          <article class="skill-card reveal"><span class="skill-number">01 — BUILD</span><h3>Développement</h3><div class="skill-tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>TypeScript</span><span>HTML / CSS</span><span>JavaScript</span><span>PHP</span><span>ASP.NET Core</span><span>PostgreSQL</span></div></article>
-          <article class="skill-card reveal"><span class="skill-number">02 — SHIP</span><h3>DevOps &amp; Cloud</h3><div class="skill-tags"><span>Docker</span><span>Docker Compose</span><span>GitLab CI/CD</span><span>Kubernetes (k3s)</span><span>kubectl</span><span>Nginx</span><span>Git</span></div></article>
-          <article class="skill-card reveal"><span class="skill-number">03 — COLLAB</span><h3>Méthodes &amp; langues</h3><div class="skill-tags"><span>Réseaux informatiques</span><span>Scrum</span><span>Kanban</span><span>Français</span><span>Anglais</span></div></article>
+          <article class="skill-card reveal"><span class="skill-number">01 / BUILD</span><h3 data-i18n="skillDev">Développement</h3><div class="skill-tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>TypeScript</span><span>HTML / CSS</span><span>JavaScript</span><span>PHP</span><span>ASP.NET Core</span><span>PostgreSQL</span></div></article>
+          <article class="skill-card reveal"><span class="skill-number">02 / SHIP</span><h3 data-i18n="skillDevops">DevOps &amp; Cloud</h3><div class="skill-tags"><span>Docker</span><span>Docker Compose</span><span>GitLab CI/CD</span><span>Kubernetes (k3s)</span><span>kubectl</span><span>Nginx</span><span>Git</span></div></article>
+          <article class="skill-card reveal"><span class="skill-number">03 / COLLAB</span><h3 data-i18n="skillOther">Autres compétences</h3><div class="skill-tags"><span data-i18n="networks">Réseaux informatiques</span><span>Scrum</span><span>Kanban</span><span>Français</span><span data-i18n="english">Anglais</span></div></article>
         </div>
       </div>
     </section>
@@ -373,46 +593,409 @@
     <section class="content-section" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
         <div class="contact-panel reveal">
-          <div class="contact-content"><p class="section-label">04 / Contact</p><h2 id="contact-title">Prêt à faire avancer une idée&nbsp;?</h2><p>Disponible pour échanger au sujet d’un stage, d’un projet ou d’une opportunité professionnelle.</p><div class="contact-links"><a href="mailto:Chihebbenjeddou1@gmail.com">Chihebbenjeddou1@gmail.com</a><a href="tel:+21699191693">+216 99 191 693</a><span>Menzel Bourguiba, Bizerte</span></div></div>
-          <a class="button button-primary" href="mailto:Chihebbenjeddou1@gmail.com">Envoyer un e-mail <span class="button-arrow" aria-hidden="true">↗</span></a>
+          <div><p class="section-label" data-i18n="contactEyebrow">04 / Contact</p><h2 id="contact-title" data-i18n="contactTitle">Échangeons autour de votre prochain projet.</h2><p class="contact-copy" data-i18n="contactCopy">Disponible pour échanger sur un stage, un projet ou une opportunité.</p>
+            <div class="contact-actions">
+              <a class="button button-primary" href="mailto:Chihebbenjeddou1@gmail.com" data-magnetic><span data-i18n="emailMe">M’écrire</span> ↗</a>
+              <a class="button button-outline" href="tel:+21699191693"><span data-i18n="callMe">M’appeler</span> · 99 191 693</a>
+              <button class="button button-outline" id="copy-email" type="button" aria-label="Copier l’adresse e-mail" data-email="Chihebbenjeddou1@gmail.com"><span data-i18n="copyEmail">Copier l’e-mail</span></button>
+              <span class="social-placeholder" data-i18n="linkedinTodo">LinkedIn · à compléter</span>
+              <span class="social-placeholder" data-i18n="githubTodo">GitHub · à compléter</span>
+            </div>
+          </div>
+          <span class="sr-only" data-i18n="cityLabel">Ville</span>
+          <p class="contact-copy" style="margin:0; align-self:end">Menzel Bourguiba, Bizerte</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="wrap footer-inner"><p>© <span id="year"></span> Mohamed Chiheb Ben Jeddou</p><a href="#accueil">Retour au sommet ↑</a></div></footer>
-  <script>
-    (() => {
-      const year = document.getElementById('year');
-      year.textContent = new Date().getFullYear();
+  <footer><div class="wrap footer-inner"><p>© <span id="year-footer">2026</span> Mohamed Chiheb Ben Jeddou</p><a class="back-top" href="#accueil"><span data-i18n="backTop">Retour en haut</span> ↑</a></div></footer>
 
-      const filters = Array.from(document.querySelectorAll('.filter-button'));
-      const projects = Array.from(document.querySelectorAll('.project[data-category]'));
-      filters.forEach((button) => {
-        button.addEventListener('click', () => {
-          const selected = button.dataset.filter;
-          filters.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-          projects.forEach((project) => {
-            project.hidden = selected !== 'all' && project.dataset.category !== selected;
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <div class="dialog-head"><div><p class="dialog-kicker" id="dialog-kicker"></p><h2 class="dialog-title" id="dialog-title"></h2><p class="dialog-meta" id="dialog-meta"></p></div><button class="dialog-close" id="dialog-close" type="button" aria-label="Fermer la fenêtre">×</button></div>
+      <hr class="dialog-divider">
+      <div class="dialog-body">
+        <div class="dialog-block"><h3 data-i18n="dialogContext">Contexte</h3><p id="dialog-context"></p></div>
+        <div class="dialog-block"><h3 data-i18n="dialogRole">Contribution</h3><p id="dialog-role"></p></div>
+        <div class="dialog-block"><h3 data-i18n="dialogWork">Réalisations</h3><ul id="dialog-work"></ul></div>
+        <div class="dialog-block"><h3 data-i18n="dialogTech">Technologies</h3><div class="dialog-techs" id="dialog-techs"></div></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+  (() => {
+    'use strict';
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+    const root = document.documentElement;
+    const body = document.body;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const copy = {
+      fr: {
+        brandAria: 'Chiheb Ben Jeddou — accueil', navAria: 'Navigation principale', terminalAria: 'Carte interactive du pipeline DevOps', pipelineTabsAria: 'Étapes du pipeline CI/CD', pipelineVisualAria: 'Schéma du pipeline CI/CD en cinq étapes', lawyerVisualAria: 'Illustration conceptuelle de dossiers de cabinet juridique', faceVisualAria: 'Illustration conceptuelle de détection faciale, sans photographie',
+        skip: 'Aller au contenu', navProjects: 'Projets', navPath: 'Parcours', navSkills: 'Compétences', navContact: 'Contact ↗',
+        availability: 'Disponible pour échanger', heroEyebrow: 'Portfolio ·', roleLabel: 'Domaines d’intérêt', roleSr: 'Domaines : IA et Data Science, développement web, DevOps et CI/CD.',
+        heroSummary: 'Je conçois des applications web, j’y intègre des solutions d’intelligence artificielle et je travaille à leur déploiement fiable, du code jusqu’à la production.',
+        heroCtaProjects: 'Découvrir mes projets', heroCtaCv: 'Télécharger mon CV', terminalLabel: 'Aperçu · CI/CD', terminalKicker: 'Projet DevOps', terminalTitle: 'Une chaîne de livraison, étape par étape.',
+        pipelineBuild: 'Construction des images multi-stage pour les services applicatifs.', pipelineTest: 'Exécution des tests dans le pipeline GitLab CI/CD.', pipelineDocker: 'Conteneurisation avec Docker et images versionnées par SHA de commit.', pipelineDeploy: 'Publication des images dans le Container Registry.', pipelineK8s: 'Déploiement sur k3s avec manifestes Kubernetes, stockage et sondes de santé.', pipelineStatus: 'Pipeline · 5 étapes', pipelineDemo: 'Aperçu', scrollCue: 'Défiler pour explorer',
+        projectsEyebrow: '01 / Expériences', projectsTitle1: 'Développement', projectsTitle2: 'et mise en œuvre.', projectsIntro: 'Trois stages complémentaires autour du web, de l’intelligence artificielle et de l’industrialisation logicielle. Ouvrez une fiche pour consulter le contexte, les contributions et les technologies.',
+        filterLabel: 'Filtrer', filterAll: 'Tous', filterWeb: 'Web', filterAi: 'IA', filterDevops: 'DevOps', devopsIndex: '01 · Stage DevOps / CI-CD', devopsTitle: 'Industrialisation d’une application trois-tiers', devopsMeta: 'Application de gestion de smartphones · Architecture trois-tiers',
+        devopsSummary: 'Objectif : automatiser le cycle de livraison, de la construction des images au déploiement sur Kubernetes.', contributionsLabel: 'Contributions principales', devopsBullet1: 'Dockerfiles multi-stage et orchestration locale avec Docker Compose.', devopsBullet2: 'Pipeline GitLab CI/CD en cinq étapes et publication des images dans le Container Registry, taguées par SHA de commit.', devopsBullet3: 'Manifestes k3s : StatefulSet PostgreSQL, Secrets, PVC, Ingress et sondes readiness / liveness.', devopsBullet4: 'Résolution de problèmes de réseau en CI, tests Angular headless et configuration CORS / HTTPS.', devopsBullet5: 'Travail en méthode agile : sprints, tableau Kanban GitLab et merge requests.', technologiesLabel: 'Technologies', projectDetails: 'Voir le détail du projet', devopsResult: 'Livrable · pipeline et manifestes de déploiement', pipelineHeading: 'Chaîne CI/CD', pipelineFive: '5 étapes', pipelineVisualCaption: 'Construction, tests, conteneurisation et déploiement automatisé.',
+        lawyerIndex: '02 · Stage PFE · Teamsyst', lawyerMeta: 'Tunis · Stage de cinq mois · Développement web', lawyerSummary: 'Contribution : développement d’une application web complète pour la gestion de cabinets d’avocats, avec un backend Spring Boot et une interface Angular.', lawyerMockTitle: 'Aperçu conceptuel · dossiers', caseOne: 'Dossier client', caseTwo: 'Suivi de procédure', caseThree: 'Documents',
+        facialIndex: '03 · Stage d’été · ELFOULADH', facialTitle: 'Application de reconnaissance faciale', facialMeta: 'Tunis · Intelligence artificielle', facialSummary: 'Contribution : réalisation d’une application intégrant l’IA pour capturer et identifier un visage, puis enregistrer le résultat dans PostgreSQL.', facialTechLabel: 'Technologies & domaine', faceRecognition: 'Reconnaissance faciale', scanMockLabel: 'Illustration conceptuelle',
+        pathEyebrow: '02 / Formation', pathTitle1: 'Apprendre.', pathTitle2: 'Construire.', pathIntro: 'Une formation en informatique orientée vers l’ingénierie logicielle, l’intelligence artificielle et la science des données.', present: 'présent', degreeEngineer: 'Diplôme National d’Ingénieur en informatique — IA & Data Science', degreeLicence: 'Licence nationale en informatique appliquée à la gestion',
+        skillsEyebrow: '03 / Compétences', skillsTitle: 'Technologies & méthodes.', skillsIntro: 'Les outils et pratiques mobilisés dans mes projets et expériences.', skillDev: 'Développement', skillDevops: 'DevOps & Cloud', skillOther: 'Autres compétences', networks: 'Réseaux informatiques', english: 'Anglais',
+        contactEyebrow: '04 / Contact', contactTitle: 'Échangeons autour de votre prochain projet.', contactCopy: 'Disponible pour échanger sur un stage, un projet ou une opportunité.', emailMe: 'M’écrire', callMe: 'M’appeler', copyEmail: 'Copier l’e-mail', linkedinTodo: 'LinkedIn · à compléter', githubTodo: 'GitHub · à compléter', cityLabel: 'Ville', backTop: 'Retour en haut',
+        dialogContext: 'Contexte', dialogRole: 'Contribution', dialogWork: 'Réalisations', dialogTech: 'Technologies', dialogClose: 'Fermer la fenêtre', copied: 'Adresse e-mail copiée ✓', copyFailed: 'Copie impossible — sélectionnez l’adresse e-mail.', themeToLight: 'Activer le thème clair', themeToDark: 'Activer le thème sombre', languageToggle: 'Switch to English'
+      },
+      en: {
+        brandAria: 'Chiheb Ben Jeddou — home', navAria: 'Main navigation', terminalAria: 'Interactive DevOps pipeline card', pipelineTabsAria: 'CI/CD pipeline stages', pipelineVisualAria: 'CI/CD pipeline diagram in five stages', lawyerVisualAria: 'Concept illustration of law-firm case files', faceVisualAria: 'Concept illustration of facial detection, without a photograph',
+        skip: 'Skip to content', navProjects: 'Projects', navPath: 'Education', navSkills: 'Skills', navContact: 'Contact ↗',
+        availability: 'Available to connect', heroEyebrow: 'Portfolio ·', roleLabel: 'Areas of interest', roleSr: 'Areas: AI and Data Science, web development, DevOps and CI/CD.',
+        heroSummary: 'I build web applications, integrate artificial intelligence solutions, and work on reliable delivery from code to production.',
+        heroCtaProjects: 'Explore my projects', heroCtaCv: 'Download my CV', terminalLabel: 'Preview · CI/CD', terminalKicker: 'DevOps project', terminalTitle: 'A delivery pipeline, one step at a time.',
+        pipelineBuild: 'Building multi-stage images for application services.', pipelineTest: 'Running tests in the GitLab CI/CD pipeline.', pipelineDocker: 'Containerizing with Docker and tagging images with the commit SHA.', pipelineDeploy: 'Publishing images to the Container Registry.', pipelineK8s: 'Deploying to k3s with Kubernetes manifests, storage and health probes.', pipelineStatus: 'Pipeline · 5 steps', pipelineDemo: 'Preview', scrollCue: 'Scroll to explore',
+        projectsEyebrow: '01 / Experience', projectsTitle1: 'Engineering', projectsTitle2: 'from code to delivery.', projectsIntro: 'Three complementary internships across web development, artificial intelligence and software delivery. Open a project to explore its context, contributions and technologies.',
+        filterLabel: 'Filter', filterAll: 'All', filterWeb: 'Web', filterAi: 'AI', filterDevops: 'DevOps', devopsIndex: '01 · DevOps / CI-CD internship', devopsTitle: 'Industrializing a three-tier application', devopsMeta: 'Smartphone management application · Three-tier architecture',
+        devopsSummary: 'Goal: automate the delivery lifecycle, from image builds to Kubernetes deployment.', contributionsLabel: 'Key contributions', devopsBullet1: 'Multi-stage Dockerfiles and local orchestration with Docker Compose.', devopsBullet2: 'Five-stage GitLab CI/CD pipeline and image publishing to the Container Registry, tagged by commit SHA.', devopsBullet3: 'k3s manifests: PostgreSQL StatefulSet, Secrets, PVC, Ingress and readiness / liveness probes.', devopsBullet4: 'Resolved CI network issues, headless Angular test issues and CORS / HTTPS configuration.', devopsBullet5: 'Agile teamwork: sprints, GitLab Kanban board and merge requests.', technologiesLabel: 'Technologies', projectDetails: 'View project details', devopsResult: 'Deliverable · pipeline and deployment manifests', pipelineHeading: 'CI/CD pipeline', pipelineFive: '5 steps', pipelineVisualCaption: 'Build, testing, containerization and automated deployment.',
+        lawyerIndex: '02 · Final-year internship · Teamsyst', lawyerMeta: 'Tunis · Five-month internship · Web development', lawyerSummary: 'Contribution: developed a full web application for law-firm management, with a Spring Boot backend and an Angular interface.', lawyerMockTitle: 'Concept interface · case files', caseOne: 'Client file', caseTwo: 'Procedure tracking', caseThree: 'Documents',
+        facialIndex: '03 · Summer internship · ELFOULADH', facialTitle: 'Facial recognition application', facialMeta: 'Tunis · Artificial intelligence', facialSummary: 'Contribution: built an AI-enabled application to capture and identify a face, then store the result in PostgreSQL.', facialTechLabel: 'Technologies & domain', faceRecognition: 'Facial recognition', scanMockLabel: 'Concept illustration',
+        pathEyebrow: '02 / Education', pathTitle1: 'Learn.', pathTitle2: 'Build.', pathIntro: 'An IT education focused on software engineering, artificial intelligence and data science.', present: 'present', degreeEngineer: 'National Engineering Degree in Computer Science — AI & Data Science', degreeLicence: 'National Bachelor’s Degree in Applied Computer Science for Management',
+        skillsEyebrow: '03 / Skills', skillsTitle: 'Technology & methods.', skillsIntro: 'Tools and practices used across my projects and experience.', skillDev: 'Development', skillDevops: 'DevOps & Cloud', skillOther: 'Other skills', networks: 'Computer networking', english: 'English',
+        contactEyebrow: '04 / Contact', contactTitle: 'Let’s talk about your next project.', contactCopy: 'Available to discuss an internship, a project or an opportunity.', emailMe: 'Email me', callMe: 'Call me', copyEmail: 'Copy email', linkedinTodo: 'LinkedIn · to add', githubTodo: 'GitHub · to add', cityLabel: 'Location', backTop: 'Back to top',
+        dialogContext: 'Context', dialogRole: 'Contribution', dialogWork: 'Work delivered', dialogTech: 'Technologies', dialogClose: 'Close dialog', copied: 'Email address copied ✓', copyFailed: 'Unable to copy — please select the email address.', themeToLight: 'Switch to light theme', themeToDark: 'Switch to dark theme', languageToggle: 'Passer en français'
+      }
+    };
+
+    const projectDetails = {
+      devops: {
+        kicker: { fr: 'Stage DevOps / CI-CD', en: 'DevOps / CI-CD internship' },
+        title: { fr: 'Industrialisation d’une application trois-tiers', en: 'Industrializing a three-tier application' },
+        meta: { fr: 'Application de gestion de smartphones · Angular · ASP.NET Core 8 · PostgreSQL', en: 'Smartphone management application · Angular · ASP.NET Core 8 · PostgreSQL' },
+        context: { fr: 'Application trois-tiers de gestion de smartphones, composée d’un frontend Angular, d’une API ASP.NET Core 8 et d’une base PostgreSQL.', en: 'A three-tier smartphone management application comprising an Angular frontend, an ASP.NET Core 8 API and a PostgreSQL database.' },
+        role: { fr: 'Automatiser et fiabiliser la livraison de l’application, de la construction des images à leur déploiement sur Kubernetes.', en: 'Automate and improve the delivery workflow, from building container images to deploying the application on Kubernetes.' },
+        work: {
+          fr: ['Dockerfiles multi-stage et orchestration locale avec Docker Compose.', 'Pipeline GitLab CI/CD à cinq étapes ; images publiées dans le Container Registry et taguées par SHA de commit.', 'Manifestes k3s avec StatefulSet PostgreSQL, Secrets, PVC, Ingress et sondes readiness / liveness.', 'Résolution de problèmes réseau en CI, tests Angular headless et configuration CORS / HTTPS.', 'Travail en méthode agile : sprints, tableau Kanban GitLab et merge requests.'],
+          en: ['Multi-stage Dockerfiles and local orchestration with Docker Compose.', 'Five-stage GitLab CI/CD pipeline; images published to the Container Registry and tagged by commit SHA.', 'k3s manifests with PostgreSQL StatefulSet, Secrets, PVC, Ingress and readiness / liveness probes.', 'Resolved CI network issues, headless Angular test issues and CORS / HTTPS configuration.', 'Agile teamwork: sprints, GitLab Kanban board and merge requests.']
+        },
+        tech: ['Docker', 'Docker Compose', 'GitLab CI/CD', 'Kubernetes', 'k3s', 'Nginx', 'Angular', 'ASP.NET Core 8', 'PostgreSQL']
+      },
+      lawyer: {
+        kicker: { fr: 'Stage PFE · Teamsyst', en: 'Final-year internship · Teamsyst' },
+        title: { fr: 'LawyerSoft', en: 'LawyerSoft' },
+        meta: { fr: 'Tunis · Stage de cinq mois', en: 'Tunis · Five-month internship' },
+        context: { fr: 'Application web destinée à la gestion de cabinets d’avocats.', en: 'Web application designed for law-firm management.' },
+        role: { fr: 'Développement de l’application avec un backend Spring Boot et une interface Angular.', en: 'Developed the application with a Spring Boot backend and an Angular interface.' },
+        work: { fr: ['Développement d’une application web complète de gestion.', 'Mise en œuvre d’un backend avec Spring Boot.', 'Réalisation d’une interface web avec Angular.'], en: ['Developed a full web-based management application.', 'Implemented a backend using Spring Boot.', 'Built the web interface with Angular.'] },
+        tech: ['Java', 'Spring Boot', 'Angular']
+      },
+      facial: {
+        kicker: { fr: 'Stage d’été · ELFOULADH', en: 'Summer internship · ELFOULADH' },
+        title: { fr: 'Application de reconnaissance faciale', en: 'Facial recognition application' },
+        meta: { fr: 'Tunis · Intelligence artificielle', en: 'Tunis · Artificial intelligence' },
+        context: { fr: 'Application de capture et d’identification de visages, avec enregistrement du résultat dans PostgreSQL.', en: 'An application for capturing and identifying faces, with results stored in PostgreSQL.' },
+        role: { fr: 'Réalisation d’une application intégrant l’IA pour capturer et identifier un visage, puis enregistrer le résultat.', en: 'Built an AI-enabled application to capture and identify a face, then store the result.' },
+        work: { fr: ['Capture d’un visage.', 'Identification par le système de reconnaissance faciale.', 'Enregistrement du résultat dans une base PostgreSQL.'], en: ['Face capture.', 'Face identification through the recognition system.', 'Storage of the result in a PostgreSQL database.'] },
+        tech: ['IA', 'Reconnaissance faciale', 'PostgreSQL']
+      }
+    };
+
+    let language = 'fr';
+    let toastTimer = 0;
+    let scrollQueued = false;
+    let cursorQueued = false;
+    let cursorX = -100, cursorY = -100;
+    const translations = copy;
+    const rolePhrases = { fr: ['IA & Data Science', 'Développement web', 'DevOps & CI/CD'], en: ['AI & Data Science', 'Web development', 'DevOps & CI/CD'] };
+    let roleIndex = 0;
+
+    function applyLanguage(next) {
+      language = next;
+      root.lang = next;
+      document.title = next === 'fr' ? 'Mohamed Chiheb Ben Jeddou — Portfolio' : 'Mohamed Chiheb Ben Jeddou — Portfolio';
+      $('meta[name="description"]').content = next === 'fr' ? 'Portfolio de Mohamed Chiheb Ben Jeddou, élève ingénieur en informatique : IA & Data Science, développement web et DevOps.' : 'Portfolio of Mohamed Chiheb Ben Jeddou, computer engineering student: AI & Data Science, web development and DevOps.';
+      $('meta[property="og:description"]').content = next === 'fr' ? 'Élève ingénieur en informatique — IA & Data Science, développement web et DevOps.' : 'Computer engineering student — AI & Data Science, web development and DevOps.';
+      $('meta[property="og:locale"]').content = next === 'fr' ? 'fr_TN' : 'en_US';
+      $('#role-text').textContent = rolePhrases[next][roleIndex];
+      $$('[data-i18n]').forEach((node) => {
+        const value = translations[next][node.dataset.i18n];
+        if (typeof value === 'string') node.textContent = value;
+      });
+      $$(`[data-i18n-aria]`).forEach((node) => { const value = translations[next][node.dataset.i18nAria]; if (value) node.setAttribute('aria-label', value); });
+      $('#language-toggle').textContent = next === 'fr' ? 'EN' : 'FR';
+      $('#language-toggle').setAttribute('aria-label', translations[next].languageToggle);
+      $('#language-toggle').title = translations[next].languageToggle;
+      $('#theme-toggle').setAttribute('aria-label', translations[next][root.dataset.theme === 'dark' ? 'themeToLight' : 'themeToDark']);
+      $('#theme-toggle').title = translations[next][root.dataset.theme === 'dark' ? 'themeToLight' : 'themeToDark'];
+      $('#dialog-close').setAttribute('aria-label', translations[next].dialogClose);
+      $('#projets').setAttribute('aria-label', next === 'fr' ? 'Projets et expériences professionnelles' : 'Projects and professional experience');
+      $('#project-list').setAttribute('aria-label', next === 'fr' ? 'Liste des projets' : 'Project list');
+      $('#copy-email').setAttribute('aria-label', translations[next].copyEmail);
+      $('#pipeline-panel').textContent = translations[next].pipelineBuild;
+      $('#pipeline-panel').setAttribute('aria-label', next === 'fr' ? 'Description de l’étape sélectionnée' : 'Description of the selected stage');
+      const filterGroup = $('.filter-row');
+      filterGroup.setAttribute('aria-label', next === 'fr' ? 'Filtrer les projets par domaine' : 'Filter projects by area');
+      $('#toast').textContent = '';
+      if ($('#project-dialog').open) {
+        const key = $('#project-dialog').dataset.project;
+        if (key) openProject(key, false);
+      }
+      try { localStorage.setItem('portfolio-language', next); } catch (_) {}
+    }
+
+    function applyTheme(theme, persist = true) {
+      root.dataset.theme = theme;
+      if (persist && !prefersReducedMotion.matches) $('.theme-wash').animate([{ opacity: .14 }, { opacity: 0 }], { duration: 260, easing: 'ease-out' });
+      $('#theme-toggle').setAttribute('aria-label', translations[language][theme === 'dark' ? 'themeToLight' : 'themeToDark']);
+      $('#theme-toggle').title = translations[language][theme === 'dark' ? 'themeToLight' : 'themeToDark'];
+      $('meta[name="theme-color"]').content = theme === 'dark' ? '#0b1424' : '#f3f6fa';
+      if (persist) { try { localStorage.setItem('portfolio-theme', theme); } catch (_) {} }
+    }
+
+    function updatePipeline(stage, focus = false) {
+      const tabs = $$('.pipeline-tab');
+      const tab = tabs.find((item) => item.dataset.stage === stage) || tabs[0];
+      tabs.forEach((item) => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+      });
+      const descriptions = { build: 'pipelineBuild', test: 'pipelineTest', docker: 'pipelineDocker', deploy: 'pipelineDeploy', k8s: 'pipelineK8s' };
+      const panel = $('#pipeline-panel');
+      panel.textContent = translations[language][descriptions[stage] || 'pipelineBuild'];
+      panel.setAttribute('aria-labelledby', tab.id);
+      if (focus) tab.focus();
+    }
+
+    function addTextElement(parent, tag, text, className) {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      node.textContent = text;
+      parent.appendChild(node);
+      return node;
+    }
+
+    function openProject(key, focusClose = true) {
+      const project = projectDetails[key];
+      if (!project) return;
+      const dialog = $('#project-dialog');
+      dialog.dataset.project = key;
+      $('#dialog-kicker').textContent = project.kicker[language];
+      $('#dialog-title').textContent = project.title[language];
+      $('#dialog-meta').textContent = project.meta[language];
+      $('#dialog-context').textContent = project.context[language];
+      $('#dialog-role').textContent = project.role[language];
+      const list = $('#dialog-work');
+      list.replaceChildren();
+      project.work[language].forEach((line) => addTextElement(list, 'li', line));
+      const techs = $('#dialog-techs');
+      techs.replaceChildren();
+      project.tech.forEach((tech) => addTextElement(techs, 'span', tech));
+      if (!dialog.open) dialog.showModal();
+      if (focusClose) $('#dialog-close').focus();
+    }
+
+    function showToast(message) {
+      const toast = $('#toast');
+      toast.textContent = message;
+      toast.classList.add('is-visible');
+      window.clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(() => toast.classList.remove('is-visible'), 2600);
+    }
+
+    async function copyEmail() {
+      const email = $('#copy-email').dataset.email;
+      let copied = false;
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          copied = await Promise.race([
+            navigator.clipboard.writeText(email).then(() => true, () => false),
+            new Promise((resolve) => window.setTimeout(() => resolve(false), 600))
+          ]);
+        } catch (_) { copied = false; }
+      }
+      if (!copied) {
+        let helper = null;
+        try {
+          helper = document.createElement('textarea');
+          helper.value = email; helper.setAttribute('readonly', '');
+          helper.style.position = 'fixed'; helper.style.opacity = '0'; helper.style.pointerEvents = 'none';
+          document.body.appendChild(helper); helper.select(); helper.setSelectionRange(0, email.length);
+          copied = document.execCommand('copy');
+        } catch (_) { copied = false; }
+        finally { if (helper) helper.remove(); }
+      }
+      showToast(copied ? translations[language].copied : translations[language].copyFailed + ' ' + email);
+    }
+
+    function updateScroll() {
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+      root.style.setProperty('--scroll-progress', progress.toFixed(4));
+      $('#site-header').classList.toggle('is-scrolled', window.scrollY > 24);
+      scrollQueued = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!scrollQueued) { scrollQueued = true; window.requestAnimationFrame(updateScroll); }
+    }, { passive: true });
+    window.addEventListener('resize', updateScroll, { passive: true });
+    updateScroll();
+
+    $('#theme-toggle').addEventListener('click', () => applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+    $('#language-toggle').addEventListener('click', () => applyLanguage(language === 'fr' ? 'en' : 'fr'));
+    $('#copy-email').addEventListener('click', copyEmail);
+    $$('.pipeline-tab').forEach((tab, index, tabs) => {
+      tab.addEventListener('click', () => updatePipeline(tab.dataset.stage));
+      tab.addEventListener('keydown', (event) => {
+        const delta = event.key === 'ArrowRight' || event.key === 'ArrowDown' ? 1 : event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? -1 : 0;
+        if (delta) { event.preventDefault(); updatePipeline(tabs[(index + delta + tabs.length) % tabs.length].dataset.stage, true); }
+        if (event.key === 'Home') { event.preventDefault(); updatePipeline(tabs[0].dataset.stage, true); }
+        if (event.key === 'End') { event.preventDefault(); updatePipeline(tabs[tabs.length - 1].dataset.stage, true); }
+      });
+    });
+
+    $$('.project-link').forEach((button) => button.addEventListener('click', () => openProject(button.dataset.openProject)));
+    $('#dialog-close').addEventListener('click', () => $('#project-dialog').close());
+    $('#project-dialog').addEventListener('click', (event) => { if (event.target === event.currentTarget) event.currentTarget.close(); });
+    $('#project-dialog').addEventListener('close', () => { const key = $('#project-dialog').dataset.project; const trigger = $(`[data-open-project="${key}"]`); if (trigger) trigger.focus(); });
+
+    const filterButtons = $$('.filter-button');
+    const projectCards = $$('.project-card[data-category]');
+    filterButtons.forEach((button) => button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      filterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      projectCards.forEach((card, index) => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.getAnimations().forEach((animation) => animation.cancel());
+        if (!match) {
+          card.inert = true;
+          card.setAttribute('aria-hidden', 'true');
+          if (!card.hidden && !prefersReducedMotion.matches) {
+            const animation = card.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.97)' }], { duration: 150, easing: 'ease-in', fill: 'forwards' });
+            animation.onfinish = () => { card.hidden = true; card.style.removeProperty('opacity'); card.style.removeProperty('transform'); };
+          } else { card.hidden = true; }
+        } else {
+          card.hidden = false; card.inert = false; card.setAttribute('aria-hidden', 'false');
+          if (!prefersReducedMotion.matches) card.animate([{ opacity: 0, transform: 'scale(.975)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 260, delay: index * 55, easing: 'cubic-bezier(.2,.7,.2,1)' });
+        }
+      });
+    }));
+
+    const revealNodes = $$('.reveal');
+    if ('IntersectionObserver' in window && !prefersReducedMotion.matches) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            if (entry.target.id === 'timeline') entry.target.style.setProperty('--timeline-progress', '1');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .14 });
+      revealNodes.forEach((node) => revealObserver.observe(node));
+      $$('.skills-grid, .projects-grid').forEach((group) => $$('.reveal', group).forEach((item, index) => item.style.setProperty('--stagger-delay', `${Math.min(index, 5) * 65}ms`)));
+    } else revealNodes.forEach((node) => node.classList.add('is-visible'));
+
+    const sections = ['projets', 'parcours', 'competences', 'contact'].map((id) => document.getElementById(id));
+    if ('IntersectionObserver' in window) {
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          $$('.nav a[data-nav]').forEach((link) => {
+            if (link.dataset.nav === entry.target.id) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
           });
         });
-      });
+      }, { rootMargin: '-34% 0px -56% 0px', threshold: 0 });
+      sections.forEach((section) => navObserver.observe(section));
+    }
 
-      const revealItems = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const observer = new IntersectionObserver((entries, instance) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              instance.unobserve(entry.target);
-            }
+    const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches && !prefersReducedMotion.matches;
+    const cursor = $('.custom-cursor');
+    if (hasFinePointer) {
+      body.classList.add('has-custom-cursor');
+      window.addEventListener('pointermove', (event) => {
+        cursorX = event.clientX; cursorY = event.clientY;
+        if (!cursorQueued) {
+          cursorQueued = true;
+          window.requestAnimationFrame(() => {
+            cursor.style.setProperty('--cursor-x', `${cursorX}px`);
+            cursor.style.setProperty('--cursor-y', `${cursorY}px`);
+            cursorQueued = false;
           });
-        }, { threshold: 0.12 });
-        revealItems.forEach((item) => observer.observe(item));
-      } else {
-        revealItems.forEach((item) => item.classList.add('is-visible'));
-      }
-    })();
+        }
+      }, { passive: true });
+      $$('a, button').forEach((element) => {
+        element.addEventListener('pointerenter', () => cursor.classList.add('is-hovering'));
+        element.addEventListener('pointerleave', () => cursor.classList.remove('is-hovering'));
+      });
+      $$('[data-magnetic]').forEach((element) => {
+        element.addEventListener('pointermove', (event) => {
+          const rect = element.getBoundingClientRect();
+          const dx = (event.clientX - rect.left - rect.width / 2) / rect.width;
+          const dy = (event.clientY - rect.top - rect.height / 2) / rect.height;
+          element.style.setProperty('--mag-x', `${(dx * 5).toFixed(1)}px`);
+          element.style.setProperty('--mag-y', `${(dy * 4).toFixed(1)}px`);
+        });
+        element.addEventListener('pointerleave', () => { element.style.setProperty('--mag-x', '0px'); element.style.setProperty('--mag-y', '0px'); });
+      });
+      const terminal = $('#terminal-card');
+      $('#terminal-scene').addEventListener('pointermove', (event) => {
+        const rect = terminal.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        terminal.style.setProperty('--terminal-rx', `${(-y * 2.4).toFixed(2)}deg`);
+        terminal.style.setProperty('--terminal-ry', `${(x * 3.2).toFixed(2)}deg`);
+        terminal.style.setProperty('--terminal-tx', `${(x * 2).toFixed(1)}px`);
+        terminal.style.setProperty('--terminal-ty', `${(y * 2).toFixed(1)}px`);
+      });
+      $('#terminal-scene').addEventListener('pointerleave', () => {
+        terminal.style.setProperty('--terminal-rx', '0deg'); terminal.style.setProperty('--terminal-ry', '0deg');
+        terminal.style.setProperty('--terminal-tx', '0px'); terminal.style.setProperty('--terminal-ty', '0px');
+      });
+      $$('.project-card[data-tilt]').forEach((card) => {
+        card.addEventListener('pointermove', (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width;
+          const y = (event.clientY - rect.top) / rect.height;
+          card.style.setProperty('--spot-x', `${(x * 100).toFixed(1)}%`);
+          card.style.setProperty('--spot-y', `${(y * 100).toFixed(1)}%`);
+          card.style.setProperty('--tilt-x', `${((x - .5) * 1.5).toFixed(2)}deg`);
+          card.style.setProperty('--tilt-y', `${((.5 - y) * 1.5).toFixed(2)}deg`);
+        });
+        card.addEventListener('pointerleave', () => { card.style.setProperty('--tilt-x', '0deg'); card.style.setProperty('--tilt-y', '0deg'); });
+      });
+    }
+
+    const currentYear = new Date().getFullYear();
+    $('#year-hero').textContent = currentYear;
+    $('#year-footer').textContent = currentYear;
+    let savedTheme = null, savedLanguage = null;
+    try { savedTheme = localStorage.getItem('portfolio-theme'); savedLanguage = localStorage.getItem('portfolio-language'); } catch (_) {}
+    applyTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark', false);
+    applyLanguage(savedLanguage === 'en' ? 'en' : 'fr');
+    updatePipeline('build');
+    if (!prefersReducedMotion.matches) {
+      window.setInterval(() => {
+        roleIndex = (roleIndex + 1) % rolePhrases[language].length;
+        const role = $('#role-text');
+        role.textContent = rolePhrases[language][roleIndex];
+        if (typeof role.animate === 'function') role.animate([{ opacity: 0, transform: 'translateY(7px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 380, easing: 'cubic-bezier(.2,.75,.2,1)' });
+      }, 3200);
+    }
+
+    const preloader = $('.preloader');
+    const finishIntro = () => {
+      body.classList.add('intro-ready');
+      if (preloader) preloader.classList.add('is-done');
+    };
+    if (prefersReducedMotion.matches) finishIntro();
+    else window.setTimeout(finishIntro, 470);
+    prefersReducedMotion.addEventListener?.('change', (event) => { if (event.matches) finishIntro(); });
+  })();
   </script>
 </body>
 </html>
